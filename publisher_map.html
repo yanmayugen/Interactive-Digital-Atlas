@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7b7bcd4861f11b1d33873bf91ed8c545 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; top: 10px; left: 50px; width: 600px; height: 110px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                font-size:16px; padding: 10px; opacity: 0.9;">
+        <h3 style="margin: 0;">Publisher Distribution & Longevity</h3>
+        <p style="margin: 5px 0;">Circle size = number of books | Color: Blue (new) → Orange → Red (long-established)</p>
+        <small>Click circles for publisher details</small>
+    </div>
+    
+    
+            <div class="folium-map" id="map_7b7bcd4861f11b1d33873bf91ed8c545" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7b7bcd4861f11b1d33873bf91ed8c545 = L.map(
+                "map_7b7bcd4861f11b1d33873bf91ed8c545",
+                {
+                    center: [33.861908, 113.69911199999999],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a8ae79c56a0c1717fdc3608c7076b957 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a8ae79c56a0c1717fdc3608c7076b957.addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+            var circle_marker_bfb68d9f23cb25bab9ab8e9fda060147 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_deb3d5714ea1db6c9f3d813ca06d92be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c936519c0cd2491287eed5fb8e82b1d = $(`<div id="html_3c936519c0cd2491287eed5fb8e82b1d" style="width: 100.0%; height: 100.0%;"><b>萬全書局</b><br>City: 北京<br>Books: 6<br>Active: 1919.0-1926.0<br>Longevity: 7 years</div>`)[0];
+                popup_deb3d5714ea1db6c9f3d813ca06d92be.setContent(html_3c936519c0cd2491287eed5fb8e82b1d);
+            
+        
+
+        circle_marker_bfb68d9f23cb25bab9ab8e9fda060147.bindPopup(popup_deb3d5714ea1db6c9f3d813ca06d92be)
+        ;
+
+        
+    
+    
+            circle_marker_bfb68d9f23cb25bab9ab8e9fda060147.bindTooltip(
+                `<div>
+                     萬全書局
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6b98e5325c24f7c2fbcba1a7a591473 = L.circleMarker(
+                [25.0406, 102.7125],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_fd26bd6ff2e461d49f4a656cf2aee6bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a8320dada5988dc35368ab9a75ead5bb = $(`<div id="html_a8320dada5988dc35368ab9a75ead5bb" style="width: 100.0%; height: 100.0%;"><b>廣濟堂</b><br>City: 雲南<br>Books: 1<br>Active: 1899.0-1899.0<br>Longevity: 0 years</div>`)[0];
+                popup_fd26bd6ff2e461d49f4a656cf2aee6bb.setContent(html_a8320dada5988dc35368ab9a75ead5bb);
+            
+        
+
+        circle_marker_c6b98e5325c24f7c2fbcba1a7a591473.bindPopup(popup_fd26bd6ff2e461d49f4a656cf2aee6bb)
+        ;
+
+        
+    
+    
+            circle_marker_c6b98e5325c24f7c2fbcba1a7a591473.bindTooltip(
+                `<div>
+                     廣濟堂
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f83be9084b298bf75624689d729fb939 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 199, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_54a8f3787d4a775de7dee5c1613fd518 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c7e9bfbdb2d9098ad8a2ac553588504 = $(`<div id="html_5c7e9bfbdb2d9098ad8a2ac553588504" style="width: 100.0%; height: 100.0%;"><b>清眞書報社</b><br>City: 北京<br>Books: 97<br>Active: 1865.0-1935.0<br>Longevity: 70 years</div>`)[0];
+                popup_54a8f3787d4a775de7dee5c1613fd518.setContent(html_5c7e9bfbdb2d9098ad8a2ac553588504);
+            
+        
+
+        circle_marker_f83be9084b298bf75624689d729fb939.bindPopup(popup_54a8f3787d4a775de7dee5c1613fd518)
+        ;
+
+        
+    
+    
+            circle_marker_f83be9084b298bf75624689d729fb939.bindTooltip(
+                `<div>
+                     清眞書報社
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ef715328e71e1b9181061b8c325b26c = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_1a7bde3ee248bae747348b47ccd623cd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed6a9f63d0beb159c726c67d66d25f20 = $(`<div id="html_ed6a9f63d0beb159c726c67d66d25f20" style="width: 100.0%; height: 100.0%;"><b>北京牛街清眞書報社</b><br>City: 北京<br>Books: 1<br>Active: 1921.0-1921.0<br>Longevity: 0 years</div>`)[0];
+                popup_1a7bde3ee248bae747348b47ccd623cd.setContent(html_ed6a9f63d0beb159c726c67d66d25f20);
+            
+        
+
+        circle_marker_0ef715328e71e1b9181061b8c325b26c.bindPopup(popup_1a7bde3ee248bae747348b47ccd623cd)
+        ;
+
+        
+    
+    
+            circle_marker_0ef715328e71e1b9181061b8c325b26c.bindTooltip(
+                `<div>
+                     北京牛街清眞書報社
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_555f3a79580550c0d6ce63d8afae3857 = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_a688c153cef7bf0405ec5ffa47e89a4c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b3df7c2d8e2286b98b89b08b6caf0e6 = $(`<div id="html_3b3df7c2d8e2286b98b89b08b6caf0e6" style="width: 100.0%; height: 100.0%;"><b>沙福春</b><br>City: 成都<br>Books: 1<br>Active: 1873.0-1873.0<br>Longevity: 0 years</div>`)[0];
+                popup_a688c153cef7bf0405ec5ffa47e89a4c.setContent(html_3b3df7c2d8e2286b98b89b08b6caf0e6);
+            
+        
+
+        circle_marker_555f3a79580550c0d6ce63d8afae3857.bindPopup(popup_a688c153cef7bf0405ec5ffa47e89a4c)
+        ;
+
+        
+    
+    
+            circle_marker_555f3a79580550c0d6ce63d8afae3857.bindTooltip(
+                `<div>
+                     沙福春
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b393949dbf30de4275d2b4b17c056a9b = L.circleMarker(
+                [36.2988, 102.9883],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_26a362dbb1db19933a68b45be4be8f52 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0072fe883515e5d83e17d7dffe2cf29b = $(`<div id="html_0072fe883515e5d83e17d7dffe2cf29b" style="width: 100.0%; height: 100.0%;"><b>馬福祥</b><br>City: 導河<br>Books: 1<br>Active: 1930.0-1930.0<br>Longevity: 0 years</div>`)[0];
+                popup_26a362dbb1db19933a68b45be4be8f52.setContent(html_0072fe883515e5d83e17d7dffe2cf29b);
+            
+        
+
+        circle_marker_b393949dbf30de4275d2b4b17c056a9b.bindPopup(popup_26a362dbb1db19933a68b45be4be8f52)
+        ;
+
+        
+    
+    
+            circle_marker_b393949dbf30de4275d2b4b17c056a9b.bindTooltip(
+                `<div>
+                     馬福祥
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5d7c4759da38b78342b77d790ce8a1d0 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_08ed454e5140a7726e920ddfb98b2ce4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f8c161708e8674936f0b3e11610e78a = $(`<div id="html_4f8c161708e8674936f0b3e11610e78a" style="width: 100.0%; height: 100.0%;"><b>中國回教俱進會本部</b><br>City: 北京<br>Books: 1<br>Active: 1932.0-1932.0<br>Longevity: 0 years</div>`)[0];
+                popup_08ed454e5140a7726e920ddfb98b2ce4.setContent(html_4f8c161708e8674936f0b3e11610e78a);
+            
+        
+
+        circle_marker_5d7c4759da38b78342b77d790ce8a1d0.bindPopup(popup_08ed454e5140a7726e920ddfb98b2ce4)
+        ;
+
+        
+    
+    
+            circle_marker_5d7c4759da38b78342b77d790ce8a1d0.bindTooltip(
+                `<div>
+                     中國回教俱進會本部
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e5ad707ea13d7e62f06a8b1df8463038 = L.circleMarker(
+                [32.0603, 118.7969],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_93e96ddbf8b99dd50591087e773f2c3b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_18b2d7910899c472bedf638879654c88 = $(`<div id="html_18b2d7910899c472bedf638879654c88" style="width: 100.0%; height: 100.0%;"><b>念一齋蔣氏</b><br>City: 南京<br>Books: 1<br>Active: 1891.0-1891.0<br>Longevity: 0 years</div>`)[0];
+                popup_93e96ddbf8b99dd50591087e773f2c3b.setContent(html_18b2d7910899c472bedf638879654c88);
+            
+        
+
+        circle_marker_e5ad707ea13d7e62f06a8b1df8463038.bindPopup(popup_93e96ddbf8b99dd50591087e773f2c3b)
+        ;
+
+        
+    
+    
+            circle_marker_e5ad707ea13d7e62f06a8b1df8463038.bindTooltip(
+                `<div>
+                     念一齋蔣氏
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_116b216231895b482bdb594a6fa36f2d = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_5262b706e997527f93d6726fc983375d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7992c4d87435e4711178f238779245fb = $(`<div id="html_7992c4d87435e4711178f238779245fb" style="width: 100.0%; height: 100.0%;"><b>秀眞精舍</b><br>City: 上海<br>Books: 2<br>Active: 1919.0-1921.0<br>Longevity: 2 years</div>`)[0];
+                popup_5262b706e997527f93d6726fc983375d.setContent(html_7992c4d87435e4711178f238779245fb);
+            
+        
+
+        circle_marker_116b216231895b482bdb594a6fa36f2d.bindPopup(popup_5262b706e997527f93d6726fc983375d)
+        ;
+
+        
+    
+    
+            circle_marker_116b216231895b482bdb594a6fa36f2d.bindTooltip(
+                `<div>
+                     秀眞精舍
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4640d8e41633177248bd5f3a9083ba8 = L.circleMarker(
+                [39.3434, 117.3616],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_bc1da0fcaa578ac11339eccd9d16acc0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1af5ae453fb921f63eb26041ba4f89e3 = $(`<div id="html_1af5ae453fb921f63eb26041ba4f89e3" style="width: 100.0%; height: 100.0%;"><b>眞經公司</b><br>City: 天津<br>Books: 3<br>Active: 1918.0-1929.0<br>Longevity: 11 years</div>`)[0];
+                popup_bc1da0fcaa578ac11339eccd9d16acc0.setContent(html_1af5ae453fb921f63eb26041ba4f89e3);
+            
+        
+
+        circle_marker_f4640d8e41633177248bd5f3a9083ba8.bindPopup(popup_bc1da0fcaa578ac11339eccd9d16acc0)
+        ;
+
+        
+    
+    
+            circle_marker_f4640d8e41633177248bd5f3a9083ba8.bindTooltip(
+                `<div>
+                     眞經公司
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_511814a152aff7bcd0c2d4bea1999312 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_25d01abd843512bc0ed5f26646c76c11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_56a2c4d365885f653a61b29edb19ef83 = $(`<div id="html_56a2c4d365885f653a61b29edb19ef83" style="width: 100.0%; height: 100.0%;"><b>愛儷園廣倉學宭</b><br>City: 上海<br>Books: 1<br>Active: 1931.0-1931.0<br>Longevity: 0 years</div>`)[0];
+                popup_25d01abd843512bc0ed5f26646c76c11.setContent(html_56a2c4d365885f653a61b29edb19ef83);
+            
+        
+
+        circle_marker_511814a152aff7bcd0c2d4bea1999312.bindPopup(popup_25d01abd843512bc0ed5f26646c76c11)
+        ;
+
+        
+    
+    
+            circle_marker_511814a152aff7bcd0c2d4bea1999312.bindTooltip(
+                `<div>
+                     愛儷園廣倉學宭
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f2c5f3ed13e2d425513a7f1759be27f0 = L.circleMarker(
+                [28.2282, 112.9388],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_9c499fa03f92b4f23c13997a0853d91d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f9c10f3d7bbc207bf518bc8289a68db = $(`<div id="html_5f9c10f3d7bbc207bf518bc8289a68db" style="width: 100.0%; height: 100.0%;"><b>商務印書館</b><br>City: 長沙<br>Books: 10<br>Active: 1933.0-1941.0<br>Longevity: 8 years</div>`)[0];
+                popup_9c499fa03f92b4f23c13997a0853d91d.setContent(html_5f9c10f3d7bbc207bf518bc8289a68db);
+            
+        
+
+        circle_marker_f2c5f3ed13e2d425513a7f1759be27f0.bindPopup(popup_9c499fa03f92b4f23c13997a0853d91d)
+        ;
+
+        
+    
+    
+            circle_marker_f2c5f3ed13e2d425513a7f1759be27f0.bindTooltip(
+                `<div>
+                     商務印書館
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3402e9df40754fac3ccad20282c9dd1 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_9a9b7af30180d6932ae7709a694ec3e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b14ee719601a788b6a65d2e749bda8b9 = $(`<div id="html_b14ee719601a788b6a65d2e749bda8b9" style="width: 100.0%; height: 100.0%;"><b>牛街萬全堂重石印本</b><br>City: 北京<br>Books: 1<br>Active: 1916.0-1916.0<br>Longevity: 0 years</div>`)[0];
+                popup_9a9b7af30180d6932ae7709a694ec3e8.setContent(html_b14ee719601a788b6a65d2e749bda8b9);
+            
+        
+
+        circle_marker_f3402e9df40754fac3ccad20282c9dd1.bindPopup(popup_9a9b7af30180d6932ae7709a694ec3e8)
+        ;
+
+        
+    
+    
+            circle_marker_f3402e9df40754fac3ccad20282c9dd1.bindTooltip(
+                `<div>
+                     牛街萬全堂重石印本
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_932fb7f06fc854d8d7c55087ae9dc53b = L.circleMarker(
+                [32.2109, 119.4552],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_429f5c017e3b0b9b40aefae2d1e8ee01 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_739418c6982d8eb729136278867a92c1 = $(`<div id="html_739418c6982d8eb729136278867a92c1" style="width: 100.0%; height: 100.0%;"><b>城內古寺</b><br>City: 鎮江<br>Books: 1<br>Active: 1912.0-1912.0<br>Longevity: 0 years</div>`)[0];
+                popup_429f5c017e3b0b9b40aefae2d1e8ee01.setContent(html_739418c6982d8eb729136278867a92c1);
+            
+        
+
+        circle_marker_932fb7f06fc854d8d7c55087ae9dc53b.bindPopup(popup_429f5c017e3b0b9b40aefae2d1e8ee01)
+        ;
+
+        
+    
+    
+            circle_marker_932fb7f06fc854d8d7c55087ae9dc53b.bindTooltip(
+                `<div>
+                     城內古寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5dc1714d367a707deb44c8c2b36d0626 = L.circleMarker(
+                [41.8057, 123.4328],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_474736cd52b0295610ef772815520f12 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5fdd8eb25c6f6d4922c2764b0e7df8ce = $(`<div id="html_5fdd8eb25c6f6d4922c2764b0e7df8ce" style="width: 100.0%; height: 100.0%;"><b>文化清眞寺</b><br>City: 瀋陽<br>Books: 3<br>Active: nan-nan<br>Longevity: 0 years</div>`)[0];
+                popup_474736cd52b0295610ef772815520f12.setContent(html_5fdd8eb25c6f6d4922c2764b0e7df8ce);
+            
+        
+
+        circle_marker_5dc1714d367a707deb44c8c2b36d0626.bindPopup(popup_474736cd52b0295610ef772815520f12)
+        ;
+
+        
+    
+    
+            circle_marker_5dc1714d367a707deb44c8c2b36d0626.bindTooltip(
+                `<div>
+                     文化清眞寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8463eb0a66d6cafa223e976bf09cc09d = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_c76fc42efbbd0451118440abfa7e74d0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_79069d38aac01e9a9d71463522d0feb6 = $(`<div id="html_79069d38aac01e9a9d71463522d0feb6" style="width: 100.0%; height: 100.0%;"><b>蓉城昭文海亭</b><br>City: 成都<br>Books: 2<br>Active: 1886.0-1887.0<br>Longevity: 1 years</div>`)[0];
+                popup_c76fc42efbbd0451118440abfa7e74d0.setContent(html_79069d38aac01e9a9d71463522d0feb6);
+            
+        
+
+        circle_marker_8463eb0a66d6cafa223e976bf09cc09d.bindPopup(popup_c76fc42efbbd0451118440abfa7e74d0)
+        ;
+
+        
+    
+    
+            circle_marker_8463eb0a66d6cafa223e976bf09cc09d.bindTooltip(
+                `<div>
+                     蓉城昭文海亭
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d593c83d58ee6b81fe2b05a1bafe2c5d = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_a8b20fe12cac4451db236f2ae18996ca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_152293cd31bb8f31999a7027fcb0369d = $(`<div id="html_152293cd31bb8f31999a7027fcb0369d" style="width: 100.0%; height: 100.0%;"><b>北京第一賓館文記</b><br>City: 北京<br>Books: 2<br>Active: 1943.0-1943.0<br>Longevity: 0 years</div>`)[0];
+                popup_a8b20fe12cac4451db236f2ae18996ca.setContent(html_152293cd31bb8f31999a7027fcb0369d);
+            
+        
+
+        circle_marker_d593c83d58ee6b81fe2b05a1bafe2c5d.bindPopup(popup_a8b20fe12cac4451db236f2ae18996ca)
+        ;
+
+        
+    
+    
+            circle_marker_d593c83d58ee6b81fe2b05a1bafe2c5d.bindTooltip(
+                `<div>
+                     北京第一賓館文記
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5393a3ebfbe8ee15f1e3eb078e7a5d5d = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_e54089e6203630b14b6323303fd8ab61 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a3dd01e841710522638d3984cdc1003a = $(`<div id="html_a3dd01e841710522638d3984cdc1003a" style="width: 100.0%; height: 100.0%;"><b>中華印書局</b><br>City: 北京<br>Books: 1<br>Active: 1927.0-1927.0<br>Longevity: 0 years</div>`)[0];
+                popup_e54089e6203630b14b6323303fd8ab61.setContent(html_a3dd01e841710522638d3984cdc1003a);
+            
+        
+
+        circle_marker_5393a3ebfbe8ee15f1e3eb078e7a5d5d.bindPopup(popup_e54089e6203630b14b6323303fd8ab61)
+        ;
+
+        
+    
+    
+            circle_marker_5393a3ebfbe8ee15f1e3eb078e7a5d5d.bindTooltip(
+                `<div>
+                     中華印書局
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_74375070568daec2e662fb9e9b3a2f58 = L.circleMarker(
+                [41.8057, 123.4328],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_68bd5fdfff97588518b5d1b94804f7fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f12451e288bf29151211c9ab1025891 = $(`<div id="html_2f12451e288bf29151211c9ab1025891" style="width: 100.0%; height: 100.0%;"><b>奉天南滿站清眞寺</b><br>City: 瀋陽<br>Books: 1<br>Active: nan-nan<br>Longevity: 0 years</div>`)[0];
+                popup_68bd5fdfff97588518b5d1b94804f7fa.setContent(html_2f12451e288bf29151211c9ab1025891);
+            
+        
+
+        circle_marker_74375070568daec2e662fb9e9b3a2f58.bindPopup(popup_68bd5fdfff97588518b5d1b94804f7fa)
+        ;
+
+        
+    
+    
+            circle_marker_74375070568daec2e662fb9e9b3a2f58.bindTooltip(
+                `<div>
+                     奉天南滿站清眞寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1bc0b0b9370d2ede1008419615b3049e = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_26bad42750004ace6bf7299d811ef8ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce731d3e732652937c95e9a297a6e9f1 = $(`<div id="html_ce731d3e732652937c95e9a297a6e9f1" style="width: 100.0%; height: 100.0%;"><b>？</b><br>City: 成都<br>Books: 5<br>Active: 1899.0-1922.0<br>Longevity: 23 years</div>`)[0];
+                popup_26bad42750004ace6bf7299d811ef8ce.setContent(html_ce731d3e732652937c95e9a297a6e9f1);
+            
+        
+
+        circle_marker_1bc0b0b9370d2ede1008419615b3049e.bindPopup(popup_26bad42750004ace6bf7299d811ef8ce)
+        ;
+
+        
+    
+    
+            circle_marker_1bc0b0b9370d2ede1008419615b3049e.bindTooltip(
+                `<div>
+                     ？
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_022f5dd936dce662bf0b09795e88462d = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_0b3b686810c2cf797d84aa0a7509f3e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_64867004bb70a73e139e27da427b0df0 = $(`<div id="html_64867004bb70a73e139e27da427b0df0" style="width: 100.0%; height: 100.0%;"><b>牛街</b><br>City: 北京<br>Books: 4<br>Active: 1920.0-1921.0<br>Longevity: 1 years</div>`)[0];
+                popup_0b3b686810c2cf797d84aa0a7509f3e0.setContent(html_64867004bb70a73e139e27da427b0df0);
+            
+        
+
+        circle_marker_022f5dd936dce662bf0b09795e88462d.bindPopup(popup_0b3b686810c2cf797d84aa0a7509f3e0)
+        ;
+
+        
+    
+    
+            circle_marker_022f5dd936dce662bf0b09795e88462d.bindTooltip(
+                `<div>
+                     牛街
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f94108c6c48d6c399dfc2567a17968c8 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_df3d9259c05ca6e77f399a7a4b412401 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e2a3f51f86b2c48073df0cdcc624ed63 = $(`<div id="html_e2a3f51f86b2c48073df0cdcc624ed63" style="width: 100.0%; height: 100.0%;"><b>京華印書局</b><br>City: 北京<br>Books: 1<br>Active: nan-nan<br>Longevity: 0 years</div>`)[0];
+                popup_df3d9259c05ca6e77f399a7a4b412401.setContent(html_e2a3f51f86b2c48073df0cdcc624ed63);
+            
+        
+
+        circle_marker_f94108c6c48d6c399dfc2567a17968c8.bindPopup(popup_df3d9259c05ca6e77f399a7a4b412401)
+        ;
+
+        
+    
+    
+            circle_marker_f94108c6c48d6c399dfc2567a17968c8.bindTooltip(
+                `<div>
+                     京華印書局
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8eae7b9d7635c8e548220f13f60357ac = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_a730d771c7dd770de0a544f7050a7c59 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5e352596f7b1651a0403c68b71cb075 = $(`<div id="html_d5e352596f7b1651a0403c68b71cb075" style="width: 100.0%; height: 100.0%;"><b>清眞寺</b><br>City: 北京<br>Books: 2<br>Active: 1863.0-1919.0<br>Longevity: 56 years</div>`)[0];
+                popup_a730d771c7dd770de0a544f7050a7c59.setContent(html_d5e352596f7b1651a0403c68b71cb075);
+            
+        
+
+        circle_marker_8eae7b9d7635c8e548220f13f60357ac.bindPopup(popup_a730d771c7dd770de0a544f7050a7c59)
+        ;
+
+        
+    
+    
+            circle_marker_8eae7b9d7635c8e548220f13f60357ac.bindTooltip(
+                `<div>
+                     清眞寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9433588706c1fdb78d5d77daf4b9feca = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_6076a46bff8849a7b52954bacd477a42 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc3147cc5f999a091c19125a2c96aff1 = $(`<div id="html_bc3147cc5f999a091c19125a2c96aff1" style="width: 100.0%; height: 100.0%;"><b>濠畔街清眞寺</b><br>City: 廣州<br>Books: 1<br>Active: 1869.0-1869.0<br>Longevity: 0 years</div>`)[0];
+                popup_6076a46bff8849a7b52954bacd477a42.setContent(html_bc3147cc5f999a091c19125a2c96aff1);
+            
+        
+
+        circle_marker_9433588706c1fdb78d5d77daf4b9feca.bindPopup(popup_6076a46bff8849a7b52954bacd477a42)
+        ;
+
+        
+    
+    
+            circle_marker_9433588706c1fdb78d5d77daf4b9feca.bindTooltip(
+                `<div>
+                     濠畔街清眞寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4edc068bb1e36503fece2de4e4b19dc2 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_3738922a1285f0029cfcfb0e67dc2ecb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_13dcf1e61517870aea395ac38e79b2e3 = $(`<div id="html_13dcf1e61517870aea395ac38e79b2e3" style="width: 100.0%; height: 100.0%;"><b>清眞書報社發行部</b><br>City: 北京<br>Books: 1<br>Active: 1921.0-1921.0<br>Longevity: 0 years</div>`)[0];
+                popup_3738922a1285f0029cfcfb0e67dc2ecb.setContent(html_13dcf1e61517870aea395ac38e79b2e3);
+            
+        
+
+        circle_marker_4edc068bb1e36503fece2de4e4b19dc2.bindPopup(popup_3738922a1285f0029cfcfb0e67dc2ecb)
+        ;
+
+        
+    
+    
+            circle_marker_4edc068bb1e36503fece2de4e4b19dc2.bindTooltip(
+                `<div>
+                     清眞書報社發行部
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f7679f8fd356a28c26e560500e39790 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_484241f558ea959cb5cbe6e53505bab0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abe126bbe07109d3e4d4ec64a0773fa2 = $(`<div id="html_abe126bbe07109d3e4d4ec64a0773fa2" style="width: 100.0%; height: 100.0%;"><b>增利印刷局</b><br>City: 北京<br>Books: 1<br>Active: nan-nan<br>Longevity: 0 years</div>`)[0];
+                popup_484241f558ea959cb5cbe6e53505bab0.setContent(html_abe126bbe07109d3e4d4ec64a0773fa2);
+            
+        
+
+        circle_marker_2f7679f8fd356a28c26e560500e39790.bindPopup(popup_484241f558ea959cb5cbe6e53505bab0)
+        ;
+
+        
+    
+    
+            circle_marker_2f7679f8fd356a28c26e560500e39790.bindTooltip(
+                `<div>
+                     增利印刷局
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6bc8e3c9bd18523598fc1a20d04ad25 = L.circleMarker(
+                [32.2109, 119.4552],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_c715d94d4377984a2ed8ff4c812a782d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7c5ee0226156e347217934ff17fdaa82 = $(`<div id="html_7c5ee0226156e347217934ff17fdaa82" style="width: 100.0%; height: 100.0%;"><b>楊德誠</b><br>City: 鎮江<br>Books: 1<br>Active: 1919.0-1919.0<br>Longevity: 0 years</div>`)[0];
+                popup_c715d94d4377984a2ed8ff4c812a782d.setContent(html_7c5ee0226156e347217934ff17fdaa82);
+            
+        
+
+        circle_marker_c6bc8e3c9bd18523598fc1a20d04ad25.bindPopup(popup_c715d94d4377984a2ed8ff4c812a782d)
+        ;
+
+        
+    
+    
+            circle_marker_c6bc8e3c9bd18523598fc1a20d04ad25.bindTooltip(
+                `<div>
+                     楊德誠
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b40302ee05af3008fef056b3d41858b = L.circleMarker(
+                [39.3434, 117.3616],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_c304eaa2ed5f6ecc827e1bcedc8751fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a9d3466df00bddce0396798a823e432 = $(`<div id="html_7a9d3466df00bddce0396798a823e432" style="width: 100.0%; height: 100.0%;"><b>光明書社</b><br>City: 天津<br>Books: 3<br>Active: 1923.0-1923.0<br>Longevity: 0 years</div>`)[0];
+                popup_c304eaa2ed5f6ecc827e1bcedc8751fa.setContent(html_7a9d3466df00bddce0396798a823e432);
+            
+        
+
+        circle_marker_6b40302ee05af3008fef056b3d41858b.bindPopup(popup_c304eaa2ed5f6ecc827e1bcedc8751fa)
+        ;
+
+        
+    
+    
+            circle_marker_6b40302ee05af3008fef056b3d41858b.bindTooltip(
+                `<div>
+                     光明書社
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_469e0697d4fccf7e1e679b3dbf3439c6 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_d149b6a89a22ee01c76b861c79d34d78 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4654465b5dc23aec7fff0de0c607fe33 = $(`<div id="html_4654465b5dc23aec7fff0de0c607fe33" style="width: 100.0%; height: 100.0%;"><b>中華書局</b><br>City: 上海<br>Books: 2<br>Active: 1924.0-1924.0<br>Longevity: 0 years</div>`)[0];
+                popup_d149b6a89a22ee01c76b861c79d34d78.setContent(html_4654465b5dc23aec7fff0de0c607fe33);
+            
+        
+
+        circle_marker_469e0697d4fccf7e1e679b3dbf3439c6.bindPopup(popup_d149b6a89a22ee01c76b861c79d34d78)
+        ;
+
+        
+    
+    
+            circle_marker_469e0697d4fccf7e1e679b3dbf3439c6.bindTooltip(
+                `<div>
+                     中華書局
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a8249988c6232d974b6f046edaa0ebe6 = L.circleMarker(
+                [32.0603, 118.7969],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_47044cb3602c9aee15d0edd18657f64e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d22bebf2490c180e733436b2e790848e = $(`<div id="html_d22bebf2490c180e733436b2e790848e" style="width: 100.0%; height: 100.0%;"><b>明德書社</b><br>City: 南京<br>Books: 2<br>Active: 1925.0-1926.0<br>Longevity: 1 years</div>`)[0];
+                popup_47044cb3602c9aee15d0edd18657f64e.setContent(html_d22bebf2490c180e733436b2e790848e);
+            
+        
+
+        circle_marker_a8249988c6232d974b6f046edaa0ebe6.bindPopup(popup_47044cb3602c9aee15d0edd18657f64e)
+        ;
+
+        
+    
+    
+            circle_marker_a8249988c6232d974b6f046edaa0ebe6.bindTooltip(
+                `<div>
+                     明德書社
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2e73f04ae3a5ac2ba7e855f6f9ab2a39 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_1b158c3c8c1c30df2635206466a06a10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3b22d00e5b5e2f8a4285e823983f14a = $(`<div id="html_d3b22d00e5b5e2f8a4285e823983f14a" style="width: 100.0%; height: 100.0%;"><b>牛街萬善書局</b><br>City: 北京<br>Books: 1<br>Active: nan-nan<br>Longevity: 0 years</div>`)[0];
+                popup_1b158c3c8c1c30df2635206466a06a10.setContent(html_d3b22d00e5b5e2f8a4285e823983f14a);
+            
+        
+
+        circle_marker_2e73f04ae3a5ac2ba7e855f6f9ab2a39.bindPopup(popup_1b158c3c8c1c30df2635206466a06a10)
+        ;
+
+        
+    
+    
+            circle_marker_2e73f04ae3a5ac2ba7e855f6f9ab2a39.bindTooltip(
+                `<div>
+                     牛街萬善書局
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c27cbba05a8e31e88299c423a15b25eb = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_cc0c7f41fcfaef7de7571c97cd376d4d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6857789398c66452fee96d0567edb96b = $(`<div id="html_6857789398c66452fee96d0567edb96b" style="width: 100.0%; height: 100.0%;"><b>周明德</b><br>City: 成都<br>Books: 2<br>Active: 1897.0-1898.0<br>Longevity: 1 years</div>`)[0];
+                popup_cc0c7f41fcfaef7de7571c97cd376d4d.setContent(html_6857789398c66452fee96d0567edb96b);
+            
+        
+
+        circle_marker_c27cbba05a8e31e88299c423a15b25eb.bindPopup(popup_cc0c7f41fcfaef7de7571c97cd376d4d)
+        ;
+
+        
+    
+    
+            circle_marker_c27cbba05a8e31e88299c423a15b25eb.bindTooltip(
+                `<div>
+                     周明德
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ed012b6546804b8a5d62b3fe0fe1bf82 = L.circleMarker(
+                [32.2109, 119.4552],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_19dbcd77edfaf05861599c1a26efa1b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61468bf0764a28b690f42a24062fdc51 = $(`<div id="html_61468bf0764a28b690f42a24062fdc51" style="width: 100.0%; height: 100.0%;"><b>談氏</b><br>City: 鎮江<br>Books: 1<br>Active: nan-nan<br>Longevity: 0 years</div>`)[0];
+                popup_19dbcd77edfaf05861599c1a26efa1b5.setContent(html_61468bf0764a28b690f42a24062fdc51);
+            
+        
+
+        circle_marker_ed012b6546804b8a5d62b3fe0fe1bf82.bindPopup(popup_19dbcd77edfaf05861599c1a26efa1b5)
+        ;
+
+        
+    
+    
+            circle_marker_ed012b6546804b8a5d62b3fe0fe1bf82.bindTooltip(
+                `<div>
+                     談氏
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_32777c1765028a94461100454eec480f = L.circleMarker(
+                [32.2109, 119.4552],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_51203947e3a8d71e7129284ec6733f07 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c9ad5a32ded1126a54c9ae3199cd23c = $(`<div id="html_9c9ad5a32ded1126a54c9ae3199cd23c" style="width: 100.0%; height: 100.0%;"><b>京口清眞寺</b><br>City: 鎮江<br>Books: 1<br>Active: nan-nan<br>Longevity: 0 years</div>`)[0];
+                popup_51203947e3a8d71e7129284ec6733f07.setContent(html_9c9ad5a32ded1126a54c9ae3199cd23c);
+            
+        
+
+        circle_marker_32777c1765028a94461100454eec480f.bindPopup(popup_51203947e3a8d71e7129284ec6733f07)
+        ;
+
+        
+    
+    
+            circle_marker_32777c1765028a94461100454eec480f.bindTooltip(
+                `<div>
+                     京口清眞寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_52079c66ff0f882139c3c6be7815fcdf = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_4f62890ac3d5469955b5b6e6a902e078 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_503d7522117a6e276115d34ad05f2f16 = $(`<div id="html_503d7522117a6e276115d34ad05f2f16" style="width: 100.0%; height: 100.0%;"><b>錦城寳眞堂</b><br>City: 成都<br>Books: 1<br>Active: 1872.0-1872.0<br>Longevity: 0 years</div>`)[0];
+                popup_4f62890ac3d5469955b5b6e6a902e078.setContent(html_503d7522117a6e276115d34ad05f2f16);
+            
+        
+
+        circle_marker_52079c66ff0f882139c3c6be7815fcdf.bindPopup(popup_4f62890ac3d5469955b5b6e6a902e078)
+        ;
+
+        
+    
+    
+            circle_marker_52079c66ff0f882139c3c6be7815fcdf.bindTooltip(
+                `<div>
+                     錦城寳眞堂
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_24d3881243fc9a017ab2b611f32389a2 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_f68e4848663587c6d6de1ac641aa50e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_043082aa3fb252ece615a002486876e6 = $(`<div id="html_043082aa3fb252ece615a002486876e6" style="width: 100.0%; height: 100.0%;"><b>安正保？</b><br>City: 上海<br>Books: 1<br>Active: 1926.0-1926.0<br>Longevity: 0 years</div>`)[0];
+                popup_f68e4848663587c6d6de1ac641aa50e0.setContent(html_043082aa3fb252ece615a002486876e6);
+            
+        
+
+        circle_marker_24d3881243fc9a017ab2b611f32389a2.bindPopup(popup_f68e4848663587c6d6de1ac641aa50e0)
+        ;
+
+        
+    
+    
+            circle_marker_24d3881243fc9a017ab2b611f32389a2.bindTooltip(
+                `<div>
+                     安正保？
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a3515d2d6f7c84fadfba43b0b3bd009b = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_57e2d0c22e2df5297ce0ae83a8cd27f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_22cb00ea571ad22543f2d37644274ed0 = $(`<div id="html_22cb00ea571ad22543f2d37644274ed0" style="width: 100.0%; height: 100.0%;"><b>楊德誠印刷所</b><br>City: 成都<br>Books: 1<br>Active: 1918.0-1918.0<br>Longevity: 0 years</div>`)[0];
+                popup_57e2d0c22e2df5297ce0ae83a8cd27f6.setContent(html_22cb00ea571ad22543f2d37644274ed0);
+            
+        
+
+        circle_marker_a3515d2d6f7c84fadfba43b0b3bd009b.bindPopup(popup_57e2d0c22e2df5297ce0ae83a8cd27f6)
+        ;
+
+        
+    
+    
+            circle_marker_a3515d2d6f7c84fadfba43b0b3bd009b.bindTooltip(
+                `<div>
+                     楊德誠印刷所
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dde0523c3602d54e65a72f545837157c = L.circleMarker(
+                [25.0406, 102.7125],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_b56aa100cd41cafa27b07835425ef28e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0bd78288f432a4a65074875b34ad9e8c = $(`<div id="html_0bd78288f432a4a65074875b34ad9e8c" style="width: 100.0%; height: 100.0%;"><b>寶訓堂</b><br>City: 雲南<br>Books: 1<br>Active: 1877.0-1877.0<br>Longevity: 0 years</div>`)[0];
+                popup_b56aa100cd41cafa27b07835425ef28e.setContent(html_0bd78288f432a4a65074875b34ad9e8c);
+            
+        
+
+        circle_marker_dde0523c3602d54e65a72f545837157c.bindPopup(popup_b56aa100cd41cafa27b07835425ef28e)
+        ;
+
+        
+    
+    
+            circle_marker_dde0523c3602d54e65a72f545837157c.bindTooltip(
+                `<div>
+                     寶訓堂
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9dff29af5c85b6f5946a3daac0acc91f = L.circleMarker(
+                [39.3434, 117.3616],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_eecf6575e3fb1c58fcd97511f3fa41ec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b481bf7745c7e21916311792eb3095f2 = $(`<div id="html_b481bf7745c7e21916311792eb3095f2" style="width: 100.0%; height: 100.0%;"><b>西馬路清眞南寺前</b><br>City: 天津<br>Books: 3<br>Active: 1926.0-1926.0<br>Longevity: 0 years</div>`)[0];
+                popup_eecf6575e3fb1c58fcd97511f3fa41ec.setContent(html_b481bf7745c7e21916311792eb3095f2);
+            
+        
+
+        circle_marker_9dff29af5c85b6f5946a3daac0acc91f.bindPopup(popup_eecf6575e3fb1c58fcd97511f3fa41ec)
+        ;
+
+        
+    
+    
+            circle_marker_9dff29af5c85b6f5946a3daac0acc91f.bindTooltip(
+                `<div>
+                     西馬路清眞南寺前
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9f9c061534b6f83fd092146cdff0b516 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_f35662f0c7d59660768d3aa03f95929a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8fe9e35ffa877946cc608ae120390763 = $(`<div id="html_8fe9e35ffa877946cc608ae120390763" style="width: 100.0%; height: 100.0%;"><b>牛街萬全書局</b><br>City: 北京<br>Books: 2<br>Active: nan-nan<br>Longevity: 0 years</div>`)[0];
+                popup_f35662f0c7d59660768d3aa03f95929a.setContent(html_8fe9e35ffa877946cc608ae120390763);
+            
+        
+
+        circle_marker_9f9c061534b6f83fd092146cdff0b516.bindPopup(popup_f35662f0c7d59660768d3aa03f95929a)
+        ;
+
+        
+    
+    
+            circle_marker_9f9c061534b6f83fd092146cdff0b516.bindTooltip(
+                `<div>
+                     牛街萬全書局
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_78021a3703b4b862531bb235ecfc9fc3 = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_6d2d9ecb7f1cab96a66a4a975ece0586 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50009edca629b9f64485634e78bbf156 = $(`<div id="html_50009edca629b9f64485634e78bbf156" style="width: 100.0%; height: 100.0%;"><b>馬思芳瀛洲</b><br>City: 廣州<br>Books: 1<br>Active: 1875.0-1875.0<br>Longevity: 0 years</div>`)[0];
+                popup_6d2d9ecb7f1cab96a66a4a975ece0586.setContent(html_50009edca629b9f64485634e78bbf156);
+            
+        
+
+        circle_marker_78021a3703b4b862531bb235ecfc9fc3.bindPopup(popup_6d2d9ecb7f1cab96a66a4a975ece0586)
+        ;
+
+        
+    
+    
+            circle_marker_78021a3703b4b862531bb235ecfc9fc3.bindTooltip(
+                `<div>
+                     馬思芳瀛洲
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f5e0e1a8e26cc1811b5ac7eada4a581 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_a9ff38f58984e4ad7fba34f4851ae981 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_35803a2701e647ea1f516ebb87058355 = $(`<div id="html_35803a2701e647ea1f516ebb87058355" style="width: 100.0%; height: 100.0%;"><b>北平成達師範出版部</b><br>City: 北京<br>Books: 1<br>Active: 1934.0-1934.0<br>Longevity: 0 years</div>`)[0];
+                popup_a9ff38f58984e4ad7fba34f4851ae981.setContent(html_35803a2701e647ea1f516ebb87058355);
+            
+        
+
+        circle_marker_2f5e0e1a8e26cc1811b5ac7eada4a581.bindPopup(popup_a9ff38f58984e4ad7fba34f4851ae981)
+        ;
+
+        
+    
+    
+            circle_marker_2f5e0e1a8e26cc1811b5ac7eada4a581.bindTooltip(
+                `<div>
+                     北平成達師範出版部
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b004038c40c37b92c5b8234df70de9f = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_bb38e1a410318b33bdf274560a5e9378 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1766fa4beb00838e5681469b1157ca86 = $(`<div id="html_1766fa4beb00838e5681469b1157ca86" style="width: 100.0%; height: 100.0%;"><b>北平震宗報出版部</b><br>City: 北京<br>Books: 1<br>Active: 1936.0-1936.0<br>Longevity: 0 years</div>`)[0];
+                popup_bb38e1a410318b33bdf274560a5e9378.setContent(html_1766fa4beb00838e5681469b1157ca86);
+            
+        
+
+        circle_marker_3b004038c40c37b92c5b8234df70de9f.bindPopup(popup_bb38e1a410318b33bdf274560a5e9378)
+        ;
+
+        
+    
+    
+            circle_marker_3b004038c40c37b92c5b8234df70de9f.bindTooltip(
+                `<div>
+                     北平震宗報出版部
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_69195fcf032b1d242a172b06978e61a0 = L.circleMarker(
+                [25.0406, 102.7125],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_2a9e0705e2f4853d2d71e08ead997d11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2dffd72a25920eb87f02b296e9687ba7 = $(`<div id="html_2dffd72a25920eb87f02b296e9687ba7" style="width: 100.0%; height: 100.0%;"><b>同文學校</b><br>City: 雲南<br>Books: 1<br>Active: 1927.0-1927.0<br>Longevity: 0 years</div>`)[0];
+                popup_2a9e0705e2f4853d2d71e08ead997d11.setContent(html_2dffd72a25920eb87f02b296e9687ba7);
+            
+        
+
+        circle_marker_69195fcf032b1d242a172b06978e61a0.bindPopup(popup_2a9e0705e2f4853d2d71e08ead997d11)
+        ;
+
+        
+    
+    
+            circle_marker_69195fcf032b1d242a172b06978e61a0.bindTooltip(
+                `<div>
+                     同文學校
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0730b505c8100d27a82423f76fc328f5 = L.circleMarker(
+                [25.0406, 102.7125],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_c673947775dd7dfaa381ae7256ef3ae9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7dc5cdf15ef9ca98d21a969da8bcd3cd = $(`<div id="html_7dc5cdf15ef9ca98d21a969da8bcd3cd" style="width: 100.0%; height: 100.0%;"><b>馬如龍</b><br>City: 雲南<br>Books: 1<br>Active: 1864.0-1864.0<br>Longevity: 0 years</div>`)[0];
+                popup_c673947775dd7dfaa381ae7256ef3ae9.setContent(html_7dc5cdf15ef9ca98d21a969da8bcd3cd);
+            
+        
+
+        circle_marker_0730b505c8100d27a82423f76fc328f5.bindPopup(popup_c673947775dd7dfaa381ae7256ef3ae9)
+        ;
+
+        
+    
+    
+            circle_marker_0730b505c8100d27a82423f76fc328f5.bindTooltip(
+                `<div>
+                     馬如龍
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ed2fd387ba4bd63e3620b6ab583815d4 = L.circleMarker(
+                [32.2109, 119.4552],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_4c4300435bbc277b011d93ca13629938 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef9919487a127618c3c4fd5d364e3ae1 = $(`<div id="html_ef9919487a127618c3c4fd5d364e3ae1" style="width: 100.0%; height: 100.0%;"><b>鎮江清眞寺</b><br>City: 鎮江<br>Books: 2<br>Active: 1893.0-1893.0<br>Longevity: 0 years</div>`)[0];
+                popup_4c4300435bbc277b011d93ca13629938.setContent(html_ef9919487a127618c3c4fd5d364e3ae1);
+            
+        
+
+        circle_marker_ed2fd387ba4bd63e3620b6ab583815d4.bindPopup(popup_4c4300435bbc277b011d93ca13629938)
+        ;
+
+        
+    
+    
+            circle_marker_ed2fd387ba4bd63e3620b6ab583815d4.bindTooltip(
+                `<div>
+                     鎮江清眞寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_69e4ef6674f1d9da8240952fd9ec02f8 = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_69d2a338df3fa357408955e681ae15ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a2983a89a5977450e99d1cd260d6b3b = $(`<div id="html_7a2983a89a5977450e99d1cd260d6b3b" style="width: 100.0%; height: 100.0%;"><b>寶真堂</b><br>City: 成都<br>Books: 2<br>Active: 1873.0-1873.0<br>Longevity: 0 years</div>`)[0];
+                popup_69d2a338df3fa357408955e681ae15ab.setContent(html_7a2983a89a5977450e99d1cd260d6b3b);
+            
+        
+
+        circle_marker_69e4ef6674f1d9da8240952fd9ec02f8.bindPopup(popup_69d2a338df3fa357408955e681ae15ab)
+        ;
+
+        
+    
+    
+            circle_marker_69e4ef6674f1d9da8240952fd9ec02f8.bindTooltip(
+                `<div>
+                     寶真堂
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3312b8d58c1bb8cef66f06a3c1807a8d = L.circleMarker(
+                [25.0406, 102.7125],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_ce51a1715a3b470f5d32b8ed6754f2d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_daa3ef5c1a5123ee32629f4434734f16 = $(`<div id="html_daa3ef5c1a5123ee32629f4434734f16" style="width: 100.0%; height: 100.0%;"><b>馬氏</b><br>City: 雲南<br>Books: 1<br>Active: 1874.0-1874.0<br>Longevity: 0 years</div>`)[0];
+                popup_ce51a1715a3b470f5d32b8ed6754f2d6.setContent(html_daa3ef5c1a5123ee32629f4434734f16);
+            
+        
+
+        circle_marker_3312b8d58c1bb8cef66f06a3c1807a8d.bindPopup(popup_ce51a1715a3b470f5d32b8ed6754f2d6)
+        ;
+
+        
+    
+    
+            circle_marker_3312b8d58c1bb8cef66f06a3c1807a8d.bindTooltip(
+                `<div>
+                     馬氏
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_87adcfcca97d700fee492cdb99c3973e = L.circleMarker(
+                [22.3193, 114.1694],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_0519b498dabc895e8723fbd8842a4073 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a15002187d2358f96827a3d345476a4 = $(`<div id="html_4a15002187d2358f96827a3d345476a4" style="width: 100.0%; height: 100.0%;"><b>Mohideen</b><br>City: 香港<br>Books: 1<br>Active: nan-nan<br>Longevity: 0 years</div>`)[0];
+                popup_0519b498dabc895e8723fbd8842a4073.setContent(html_4a15002187d2358f96827a3d345476a4);
+            
+        
+
+        circle_marker_87adcfcca97d700fee492cdb99c3973e.bindPopup(popup_0519b498dabc895e8723fbd8842a4073)
+        ;
+
+        
+    
+    
+            circle_marker_87adcfcca97d700fee492cdb99c3973e.bindTooltip(
+                `<div>
+                     Mohideen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b36ebe2854a633294b6593869084fbdd = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7b7bcd4861f11b1d33873bf91ed8c545);
+        
+    
+        var popup_744c370c38d01835b154082a274e000d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7444525a081423f30a3f3e4224656785 = $(`<div id="html_7444525a081423f30a3f3e4224656785" style="width: 100.0%; height: 100.0%;"><b>敬畏堂</b><br>City: 成都<br>Books: 1<br>Active: 1878.0-1878.0<br>Longevity: 0 years</div>`)[0];
+                popup_744c370c38d01835b154082a274e000d.setContent(html_7444525a081423f30a3f3e4224656785);
+            
+        
+
+        circle_marker_b36ebe2854a633294b6593869084fbdd.bindPopup(popup_744c370c38d01835b154082a274e000d)
+        ;
+
+        
+    
+    
+            circle_marker_b36ebe2854a633294b6593869084fbdd.bindTooltip(
+                `<div>
+                     敬畏堂
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

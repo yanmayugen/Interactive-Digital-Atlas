@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_994036da82a535b219f491d3b6ffde66 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_994036da82a535b219f491d3b6ffde66" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_994036da82a535b219f491d3b6ffde66 = L.map(
+                "map_994036da82a535b219f491d3b6ffde66",
+                {
+                    center: [35.0, 110.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8c4342d8a9f18a8592e6d74b392bd3b0 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8c4342d8a9f18a8592e6d74b392bd3b0.addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+            var circle_marker_e9b3f9ed5daee05c38823d4c67102d15 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_4d24a63e4c4cbe92a8b667157fd61ccb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9e0da120de8bea2e4bcc35ff3b409c9a = $(`<div id="html_9e0da120de8bea2e4bcc35ff3b409c9a" style="width: 100.0%; height: 100.0%;">         <b>哎嘞沃史略考詩 別名：觀音歷史</b><br>         Author: 馬之望 著<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_4d24a63e4c4cbe92a8b667157fd61ccb.setContent(html_9e0da120de8bea2e4bcc35ff3b409c9a);
+            
+        
+
+        circle_marker_e9b3f9ed5daee05c38823d4c67102d15.bindPopup(popup_4d24a63e4c4cbe92a8b667157fd61ccb)
+        ;
+
+        
+    
+    
+            var circle_marker_833f991d4e597390257cf34026be0ec4 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_1ccebc09bce6bd6ef389b5412d87be50 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_256a4149dc19aca1dd7248ea68bde4bc = $(`<div id="html_256a4149dc19aca1dd7248ea68bde4bc" style="width: 100.0%; height: 100.0%;">         <b>回教辨眞</b><br>         Author: 范懷唐？許友義？<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_1ccebc09bce6bd6ef389b5412d87be50.setContent(html_256a4149dc19aca1dd7248ea68bde4bc);
+            
+        
+
+        circle_marker_833f991d4e597390257cf34026be0ec4.bindPopup(popup_1ccebc09bce6bd6ef389b5412d87be50)
+        ;
+
+        
+    
+    
+            var circle_marker_033fc5144df0a480567dc48efc9b66ee = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_a3f435d10785d6a38b6f3ce7ebd59fee = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b4de74567a8e430dcbd8ca28160ef5d0 = $(`<div id="html_b4de74567a8e430dcbd8ca28160ef5d0" style="width: 100.0%; height: 100.0%;">         <b>回教眞相</b><br>         Author: 愛勒吉斯爾 馬堅譯<br>         City: 上海<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_a3f435d10785d6a38b6f3ce7ebd59fee.setContent(html_b4de74567a8e430dcbd8ca28160ef5d0);
+            
+        
+
+        circle_marker_033fc5144df0a480567dc48efc9b66ee.bindPopup(popup_a3f435d10785d6a38b6f3ce7ebd59fee)
+        ;
+
+        
+    
+    
+            var circle_marker_816eca96dd797f381f716c0fbbc49962 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_22dcced87692fa45128ddb5319a71d71 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a7a84f501577a4cc2cdf37d1b1a95260 = $(`<div id="html_a7a84f501577a4cc2cdf37d1b1a95260" style="width: 100.0%; height: 100.0%;">         <b>回教眞相</b><br>         Author: 愛勒吉斯爾 馬堅譯<br>         City: 上海<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_22dcced87692fa45128ddb5319a71d71.setContent(html_a7a84f501577a4cc2cdf37d1b1a95260);
+            
+        
+
+        circle_marker_816eca96dd797f381f716c0fbbc49962.bindPopup(popup_22dcced87692fa45128ddb5319a71d71)
+        ;
+
+        
+    
+    
+            var circle_marker_73b5d0ce73d23b07e7f73bf461dd1fed = L.circleMarker(
+                [41.8057, 123.4328],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_a03affe9b0fbfe3c4e32322767f94ed0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bd3baea856674402d89f145b226ce53f = $(`<div id="html_bd3baea856674402d89f145b226ce53f" style="width: 100.0%; height: 100.0%;">         <b>教典摘要</b><br>         Author: 張德純 譯著<br>         City: 奉天<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_a03affe9b0fbfe3c4e32322767f94ed0.setContent(html_bd3baea856674402d89f145b226ce53f);
+            
+        
+
+        circle_marker_73b5d0ce73d23b07e7f73bf461dd1fed.bindPopup(popup_a03affe9b0fbfe3c4e32322767f94ed0)
+        ;
+
+        
+    
+    
+            var circle_marker_3dbe2ce622e0dcf337e26d71aed77119 = L.circleMarker(
+                [41.8057, 123.4328],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_ec38da1c7fb1549941481963ed216a62 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_717ed3a799f8bb4b0e4c5f762a423913 = $(`<div id="html_717ed3a799f8bb4b0e4c5f762a423913" style="width: 100.0%; height: 100.0%;">         <b>教典摘要</b><br>         Author: 張德純 譯著<br>         City: 奉天<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_ec38da1c7fb1549941481963ed216a62.setContent(html_717ed3a799f8bb4b0e4c5f762a423913);
+            
+        
+
+        circle_marker_3dbe2ce622e0dcf337e26d71aed77119.bindPopup(popup_ec38da1c7fb1549941481963ed216a62)
+        ;
+
+        
+    
+    
+            var circle_marker_7a285ace33f2959d5bc11966f24d3522 = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_8cae9fc8ae7a8169691e6d9f5fa4134b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c6c20f87edf08c3e45cafefb2ae2e875 = $(`<div id="html_c6c20f87edf08c3e45cafefb2ae2e875" style="width: 100.0%; height: 100.0%;">         <b>經漢註解赫廳</b><br>         Author: 清 余昭文<br>         City: 蓉城<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_8cae9fc8ae7a8169691e6d9f5fa4134b.setContent(html_c6c20f87edf08c3e45cafefb2ae2e875);
+            
+        
+
+        circle_marker_7a285ace33f2959d5bc11966f24d3522.bindPopup(popup_8cae9fc8ae7a8169691e6d9f5fa4134b)
+        ;
+
+        
+    
+    
+            var circle_marker_dfbefc3f8f9bf561d21ba9b969f4268f = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_c57da32d149363658fac20c165d7cb83 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d42e20bb8c8d70c10d51e0dcaa171cb9 = $(`<div id="html_d42e20bb8c8d70c10d51e0dcaa171cb9" style="width: 100.0%; height: 100.0%;">         <b>經漢註解赫廳</b><br>         Author: 清 余昭文<br>         City: 蓉城<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_c57da32d149363658fac20c165d7cb83.setContent(html_d42e20bb8c8d70c10d51e0dcaa171cb9);
+            
+        
+
+        circle_marker_dfbefc3f8f9bf561d21ba9b969f4268f.bindPopup(popup_c57da32d149363658fac20c165d7cb83)
+        ;
+
+        
+    
+    
+            var circle_marker_e376b31a60a87604bf93555de9c54260 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_078f67d21ef955cfc94e67263d2b5fd0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_310d3d97819fb1beacbd78d134b04d54 = $(`<div id="html_310d3d97819fb1beacbd78d134b04d54" style="width: 100.0%; height: 100.0%;">         <b>覺世省迷錄</b><br>         Author: 模喃必哈咍<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_078f67d21ef955cfc94e67263d2b5fd0.setContent(html_310d3d97819fb1beacbd78d134b04d54);
+            
+        
+
+        circle_marker_e376b31a60a87604bf93555de9c54260.bindPopup(popup_078f67d21ef955cfc94e67263d2b5fd0)
+        ;
+
+        
+    
+    
+            var circle_marker_4ddb6021baaec10dd00ff731e17bb403 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_093bab7bd7cd5d818ed7a7903ae719b3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3433811c9ef7472ec4df13b86539f430 = $(`<div id="html_3433811c9ef7472ec4df13b86539f430" style="width: 100.0%; height: 100.0%;">         <b>穆罕默德</b><br>         Author: 穆罕默德阿黎 原著 追求學會 譯述<br>         City: 北平<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_093bab7bd7cd5d818ed7a7903ae719b3.setContent(html_3433811c9ef7472ec4df13b86539f430);
+            
+        
+
+        circle_marker_4ddb6021baaec10dd00ff731e17bb403.bindPopup(popup_093bab7bd7cd5d818ed7a7903ae719b3)
+        ;
+
+        
+    
+    
+            var circle_marker_38f8b8d4ea2be24474ed75377a3d7251 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_d482b64d0c7e66f5f7c4450fa6877e00 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_55be849b98b537915b4394b4940e22c7 = $(`<div id="html_55be849b98b537915b4394b4940e22c7" style="width: 100.0%; height: 100.0%;">         <b>穆民教女歌</b><br>         Author: ？<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_d482b64d0c7e66f5f7c4450fa6877e00.setContent(html_55be849b98b537915b4394b4940e22c7);
+            
+        
+
+        circle_marker_38f8b8d4ea2be24474ed75377a3d7251.bindPopup(popup_d482b64d0c7e66f5f7c4450fa6877e00)
+        ;
+
+        
+    
+    
+            var circle_marker_1706ba5bd46a431692a192aa26b4ee4f = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_2f0fe1908af3cdc8ddbddd61ca110023 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2581c97f2142e8d927baf8fe15b40e85 = $(`<div id="html_2581c97f2142e8d927baf8fe15b40e85" style="width: 100.0%; height: 100.0%;">         <b>清眞蒙引歌</b><br>         Author: ？<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_2f0fe1908af3cdc8ddbddd61ca110023.setContent(html_2581c97f2142e8d927baf8fe15b40e85);
+            
+        
+
+        circle_marker_1706ba5bd46a431692a192aa26b4ee4f.bindPopup(popup_2f0fe1908af3cdc8ddbddd61ca110023)
+        ;
+
+        
+    
+    
+            var circle_marker_058a45592fc4bc98f8444461d964e524 = L.circleMarker(
+                [39.3434, 117.3616],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_89baafe82f70303a3f17778ba9c586ec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1f94a3f009d5471328e79b6acd3174d1 = $(`<div id="html_1f94a3f009d5471328e79b6acd3174d1" style="width: 100.0%; height: 100.0%;">         <b>清眞摘要</b><br>         Author: ？<br>         City: 天津<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_89baafe82f70303a3f17778ba9c586ec.setContent(html_1f94a3f009d5471328e79b6acd3174d1);
+            
+        
+
+        circle_marker_058a45592fc4bc98f8444461d964e524.bindPopup(popup_89baafe82f70303a3f17778ba9c586ec)
+        ;
+
+        
+    
+    
+            var circle_marker_4bbbb77024488f33dbe4f9766b4c9d32 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_e6d9a6e0a77d26aaec6bb95ea48015c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_27fcda9f3b132997bdd9d1a63466fa74 = $(`<div id="html_27fcda9f3b132997bdd9d1a63466fa74" style="width: 100.0%; height: 100.0%;">         <b>清眞週刊 第1卷第1號 合訂 天經文譯解 李廷相 譯</b><br>         Author: 清真週刊社<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_e6d9a6e0a77d26aaec6bb95ea48015c2.setContent(html_27fcda9f3b132997bdd9d1a63466fa74);
+            
+        
+
+        circle_marker_4bbbb77024488f33dbe4f9766b4c9d32.bindPopup(popup_e6d9a6e0a77d26aaec6bb95ea48015c2)
+        ;
+
+        
+    
+    
+            var circle_marker_6fde76e2eba60032f283d35baa036964 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_d1ef1165c7339e0d3c919caed50f2c01 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_83b62b32cc8c2a429d5415083ef66df1 = $(`<div id="html_83b62b32cc8c2a429d5415083ef66df1" style="width: 100.0%; height: 100.0%;">         <b>聖訓四十章</b><br>         Author: 馬玉龍 譯編<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_d1ef1165c7339e0d3c919caed50f2c01.setContent(html_83b62b32cc8c2a429d5415083ef66df1);
+            
+        
+
+        circle_marker_6fde76e2eba60032f283d35baa036964.bindPopup(popup_d1ef1165c7339e0d3c919caed50f2c01)
+        ;
+
+        
+    
+    
+            var circle_marker_b2640f1f952338cc13518df125d1a493 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_15333fed31cf2f37d471a34decc3b254 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4b8dc1e219695d730ae0f22feca83b62 = $(`<div id="html_4b8dc1e219695d730ae0f22feca83b62" style="width: 100.0%; height: 100.0%;">         <b>十等復生</b><br>         Author: 馬玉龍 述<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_15333fed31cf2f37d471a34decc3b254.setContent(html_4b8dc1e219695d730ae0f22feca83b62);
+            
+        
+
+        circle_marker_b2640f1f952338cc13518df125d1a493.bindPopup(popup_15333fed31cf2f37d471a34decc3b254)
+        ;
+
+        
+    
+    
+            var circle_marker_a79a14365dda893b2af468201cc5b5ba = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_e6cd2134c7c05e890730fed606959de5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f287f6000430249e4708e746f1df6f3e = $(`<div id="html_f287f6000430249e4708e746f1df6f3e" style="width: 100.0%; height: 100.0%;">         <b>天方教典歌</b><br>         Author: ？<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_e6cd2134c7c05e890730fed606959de5.setContent(html_f287f6000430249e4708e746f1df6f3e);
+            
+        
+
+        circle_marker_a79a14365dda893b2af468201cc5b5ba.bindPopup(popup_e6cd2134c7c05e890730fed606959de5)
+        ;
+
+        
+    
+    
+            var circle_marker_66ad67e565c2eef394c3f0bf28d4bfbf = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_8d04294596e014e22c4dd04d1e1f871d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_621262ca45bd068454d56a907d712a3d = $(`<div id="html_621262ca45bd068454d56a907d712a3d" style="width: 100.0%; height: 100.0%;">         <b>天方女子四字經</b><br>         Author: 龍澤周<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_8d04294596e014e22c4dd04d1e1f871d.setContent(html_621262ca45bd068454d56a907d712a3d);
+            
+        
+
+        circle_marker_66ad67e565c2eef394c3f0bf28d4bfbf.bindPopup(popup_8d04294596e014e22c4dd04d1e1f871d)
+        ;
+
+        
+    
+    
+            var circle_marker_9c456431f0c54a0f25895a9eb6866ae8 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_6cae7f3715c3670785c876054f670330 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_73cac2801c920f892d0f4e56be5c4ece = $(`<div id="html_73cac2801c920f892d0f4e56be5c4ece" style="width: 100.0%; height: 100.0%;">         <b>天方女子四字經</b><br>         Author: 龍澤周 著<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_6cae7f3715c3670785c876054f670330.setContent(html_73cac2801c920f892d0f4e56be5c4ece);
+            
+        
+
+        circle_marker_9c456431f0c54a0f25895a9eb6866ae8.bindPopup(popup_6cae7f3715c3670785c876054f670330)
+        ;
+
+        
+    
+    
+            var circle_marker_7b6b7b01666448d0fee4b226778fa0d6 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_4e51657bfde9ba9589a7a1141322cf61 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_12583fb58a21e1b2bec8130301c596f8 = $(`<div id="html_12583fb58a21e1b2bec8130301c596f8" style="width: 100.0%; height: 100.0%;">         <b>天方奇異勸善錄：新譯</b><br>         Author: 李廷相 譯著 張作良 校批<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_4e51657bfde9ba9589a7a1141322cf61.setContent(html_12583fb58a21e1b2bec8130301c596f8);
+            
+        
+
+        circle_marker_7b6b7b01666448d0fee4b226778fa0d6.bindPopup(popup_4e51657bfde9ba9589a7a1141322cf61)
+        ;
+
+        
+    
+    
+            var circle_marker_e5e35d4db74ee6e4b0282464064d900e = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_53a9e331794ac91b1403dfa70a5ee79b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3402ebd00fe70eb037a63f57e8d60ef1 = $(`<div id="html_3402ebd00fe70eb037a63f57e8d60ef1" style="width: 100.0%; height: 100.0%;">         <b>新譯天方大化歷史</b><br>         Author: 李廷相 譯著<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_53a9e331794ac91b1403dfa70a5ee79b.setContent(html_3402ebd00fe70eb037a63f57e8d60ef1);
+            
+        
+
+        circle_marker_e5e35d4db74ee6e4b0282464064d900e.bindPopup(popup_53a9e331794ac91b1403dfa70a5ee79b)
+        ;
+
+        
+    
+    
+            var circle_marker_80ad9c6863c11b0b32d68dbb3dc5e9d3 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_35963273a46ebd701a6e4c7716876bde = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e2651c7bcf92b4a8614860d7fad8309 = $(`<div id="html_0e2651c7bcf92b4a8614860d7fad8309" style="width: 100.0%; height: 100.0%;">         <b>亞漢文清眞言</b><br>         Author: ？<br>         City: 北平<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_35963273a46ebd701a6e4c7716876bde.setContent(html_0e2651c7bcf92b4a8614860d7fad8309);
+            
+        
+
+        circle_marker_80ad9c6863c11b0b32d68dbb3dc5e9d3.bindPopup(popup_35963273a46ebd701a6e4c7716876bde)
+        ;
+
+        
+    
+    
+            var circle_marker_0db3d6bf80086debadcabd7a4fee160a = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_8c15e9cdb2e926fd4301d0d8c07dbeca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e26c277541081a0f364bec3e1fd4a78 = $(`<div id="html_6e26c277541081a0f364bec3e1fd4a78" style="width: 100.0%; height: 100.0%;">         <b>亞漢文清真言</b><br>         Author: ？<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: 10+1<br>         - Juan: 0<br>         - Prefaces: 0.0<br>         - Commercial: Yes (has ads)         </div>`)[0];
+                popup_8c15e9cdb2e926fd4301d0d8c07dbeca.setContent(html_6e26c277541081a0f364bec3e1fd4a78);
+            
+        
+
+        circle_marker_0db3d6bf80086debadcabd7a4fee160a.bindPopup(popup_8c15e9cdb2e926fd4301d0d8c07dbeca)
+        ;
+
+        
+    
+    
+            var circle_marker_999bf154cebc6a07e62520306756bd90 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_09072bce4c94fba03b990af95bd26799 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3bbcf58dcfed76792cab12b61c983955 = $(`<div id="html_3bbcf58dcfed76792cab12b61c983955" style="width: 100.0%; height: 100.0%;">         <b>伊斯蘭教的認識</b><br>         Author: 周仲仁  譯著； 馬自成， 趙振武 審訂<br>         City: 北平<br>         <hr>         Physical Metrics:<br>         - Pages: 28<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0.0<br>         - Commercial: No         </div>`)[0];
+                popup_09072bce4c94fba03b990af95bd26799.setContent(html_3bbcf58dcfed76792cab12b61c983955);
+            
+        
+
+        circle_marker_999bf154cebc6a07e62520306756bd90.bindPopup(popup_09072bce4c94fba03b990af95bd26799)
+        ;
+
+        
+    
+    
+            var circle_marker_8af4e8a498aa8d8dd3447fb92e5fea83 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_2be50cbeb825f7126deacb2f7d9a5766 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec49bf872444b32193152d84195eb954 = $(`<div id="html_ec49bf872444b32193152d84195eb954" style="width: 100.0%; height: 100.0%;">         <b>伊斯蘭入門</b><br>         Author: 唐易塵 [北平] 選著 王敬一 張馥庭 校正<br>         City: 北平<br>         <hr>         Physical Metrics:<br>         - Pages: 77+6<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0.0<br>         - Commercial: No         </div>`)[0];
+                popup_2be50cbeb825f7126deacb2f7d9a5766.setContent(html_ec49bf872444b32193152d84195eb954);
+            
+        
+
+        circle_marker_8af4e8a498aa8d8dd3447fb92e5fea83.bindPopup(popup_2be50cbeb825f7126deacb2f7d9a5766)
+        ;
+
+        
+    
+    
+            var circle_marker_f90ec1abee61d969bbcae570766a11b4 = L.circleMarker(
+                [22.3193, 114.1694],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_4af3c6d84d85f9e155555beffd28bd24 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e7aa504d3386175d4fa63454c739710 = $(`<div id="html_4e7aa504d3386175d4fa63454c739710" style="width: 100.0%; height: 100.0%;">         <b>至聖先知言行錄</b><br>         Author: 桂乍加麼屋甸 著 周沛華 湯偉烈 譯 優努士卑亞罕默德麼希甸 編纂<br>         City: 香港<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_4af3c6d84d85f9e155555beffd28bd24.setContent(html_4e7aa504d3386175d4fa63454c739710);
+            
+        
+
+        circle_marker_f90ec1abee61d969bbcae570766a11b4.bindPopup(popup_4af3c6d84d85f9e155555beffd28bd24)
+        ;
+
+        
+    
+    
+            var circle_marker_c82dfb45b6114b98d50952c8c85f7197 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_2560ced638bf008584daf1a8a85370b6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_097b483e0491c269ba2fcdebd925e0e6 = $(`<div id="html_097b483e0491c269ba2fcdebd925e0e6" style="width: 100.0%; height: 100.0%;">         <b>哎嘞沃史略考詩 別名：觀音歷史</b><br>         Author: 馬之望 著<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_2560ced638bf008584daf1a8a85370b6.setContent(html_097b483e0491c269ba2fcdebd925e0e6);
+            
+        
+
+        circle_marker_c82dfb45b6114b98d50952c8c85f7197.bindPopup(popup_2560ced638bf008584daf1a8a85370b6)
+        ;
+
+        
+    
+    
+            var circle_marker_c08c6c4a034895caea69dbf3a7b5714b = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_caaf0e873882dea6c79af95bff270083 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2463d8a6727ac1dbcc2ac123a5eca1f7 = $(`<div id="html_2463d8a6727ac1dbcc2ac123a5eca1f7" style="width: 100.0%; height: 100.0%;">         <b>回教辨眞</b><br>         Author: 范懷唐？許友義？<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_caaf0e873882dea6c79af95bff270083.setContent(html_2463d8a6727ac1dbcc2ac123a5eca1f7);
+            
+        
+
+        circle_marker_c08c6c4a034895caea69dbf3a7b5714b.bindPopup(popup_caaf0e873882dea6c79af95bff270083)
+        ;
+
+        
+    
+    
+            var circle_marker_54204d12e21e3561a57a614191021baf = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_19d9ebf57701dff0029726414bd1c9e3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1969ecbc5291f3c4b3263006c413fe06 = $(`<div id="html_1969ecbc5291f3c4b3263006c413fe06" style="width: 100.0%; height: 100.0%;">         <b>回教眞相</b><br>         Author: 愛勒吉斯爾 馬堅譯<br>         City: 上海<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_19d9ebf57701dff0029726414bd1c9e3.setContent(html_1969ecbc5291f3c4b3263006c413fe06);
+            
+        
+
+        circle_marker_54204d12e21e3561a57a614191021baf.bindPopup(popup_19d9ebf57701dff0029726414bd1c9e3)
+        ;
+
+        
+    
+    
+            var circle_marker_5414ca6c5fa9ec7240922f41ec1e8e80 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_6c2bd9b508a3db7fcc1b79e0840ae606 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b7da42d7acfee38cb3c87699081d42e1 = $(`<div id="html_b7da42d7acfee38cb3c87699081d42e1" style="width: 100.0%; height: 100.0%;">         <b>回教眞相</b><br>         Author: 愛勒吉斯爾 馬堅譯<br>         City: 上海<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_6c2bd9b508a3db7fcc1b79e0840ae606.setContent(html_b7da42d7acfee38cb3c87699081d42e1);
+            
+        
+
+        circle_marker_5414ca6c5fa9ec7240922f41ec1e8e80.bindPopup(popup_6c2bd9b508a3db7fcc1b79e0840ae606)
+        ;
+
+        
+    
+    
+            var circle_marker_c3025ab20f1da57512c53c43a71d9be1 = L.circleMarker(
+                [41.8057, 123.4328],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_4a7587291c17070b48a322d5035825aa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb78817a705f869e0c07349bba7763d3 = $(`<div id="html_bb78817a705f869e0c07349bba7763d3" style="width: 100.0%; height: 100.0%;">         <b>教典摘要</b><br>         Author: 張德純 譯著<br>         City: 奉天<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_4a7587291c17070b48a322d5035825aa.setContent(html_bb78817a705f869e0c07349bba7763d3);
+            
+        
+
+        circle_marker_c3025ab20f1da57512c53c43a71d9be1.bindPopup(popup_4a7587291c17070b48a322d5035825aa)
+        ;
+
+        
+    
+    
+            var circle_marker_ce7fbc811fa03b1c15ef6709ea4187fd = L.circleMarker(
+                [41.8057, 123.4328],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_bae5acfa9939e7bf983e79089a340614 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_21a1724858d8e5a3792ee1d539dfd19f = $(`<div id="html_21a1724858d8e5a3792ee1d539dfd19f" style="width: 100.0%; height: 100.0%;">         <b>教典摘要</b><br>         Author: 張德純 譯著<br>         City: 奉天<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_bae5acfa9939e7bf983e79089a340614.setContent(html_21a1724858d8e5a3792ee1d539dfd19f);
+            
+        
+
+        circle_marker_ce7fbc811fa03b1c15ef6709ea4187fd.bindPopup(popup_bae5acfa9939e7bf983e79089a340614)
+        ;
+
+        
+    
+    
+            var circle_marker_be24942ff73ece0962e9ffb45422d898 = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_544373ed0d538762b6dfeb737334bc7b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_600860ca971bba622318af3cf5223ff5 = $(`<div id="html_600860ca971bba622318af3cf5223ff5" style="width: 100.0%; height: 100.0%;">         <b>經漢註解赫廳</b><br>         Author: 清 余昭文<br>         City: 蓉城<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_544373ed0d538762b6dfeb737334bc7b.setContent(html_600860ca971bba622318af3cf5223ff5);
+            
+        
+
+        circle_marker_be24942ff73ece0962e9ffb45422d898.bindPopup(popup_544373ed0d538762b6dfeb737334bc7b)
+        ;
+
+        
+    
+    
+            var circle_marker_6ecb3ba7dddf0b686b35dc1a0412a0f5 = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_d0e4389c9bc296838b38172f0d6b8d14 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4a34b80a974fee93142d10e2a5eeefbf = $(`<div id="html_4a34b80a974fee93142d10e2a5eeefbf" style="width: 100.0%; height: 100.0%;">         <b>經漢註解赫廳</b><br>         Author: 清 余昭文<br>         City: 蓉城<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_d0e4389c9bc296838b38172f0d6b8d14.setContent(html_4a34b80a974fee93142d10e2a5eeefbf);
+            
+        
+
+        circle_marker_6ecb3ba7dddf0b686b35dc1a0412a0f5.bindPopup(popup_d0e4389c9bc296838b38172f0d6b8d14)
+        ;
+
+        
+    
+    
+            var circle_marker_f0549c104ac2b87d81ff8c3099bd89a1 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_f8067c9076626f64bac7e404dd703581 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_888c9249d5634ffe8cdffc06c13883a5 = $(`<div id="html_888c9249d5634ffe8cdffc06c13883a5" style="width: 100.0%; height: 100.0%;">         <b>覺世省迷錄</b><br>         Author: 模喃必哈咍<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_f8067c9076626f64bac7e404dd703581.setContent(html_888c9249d5634ffe8cdffc06c13883a5);
+            
+        
+
+        circle_marker_f0549c104ac2b87d81ff8c3099bd89a1.bindPopup(popup_f8067c9076626f64bac7e404dd703581)
+        ;
+
+        
+    
+    
+            var circle_marker_69465e74a28b1992ea4f4f1e53602dcf = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_757762f74943b166280bf5f4eb336abf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b595c7cf35561265aa142548ff5cc983 = $(`<div id="html_b595c7cf35561265aa142548ff5cc983" style="width: 100.0%; height: 100.0%;">         <b>穆罕默德</b><br>         Author: 穆罕默德阿黎 原著 追求學會 譯述<br>         City: 北平<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_757762f74943b166280bf5f4eb336abf.setContent(html_b595c7cf35561265aa142548ff5cc983);
+            
+        
+
+        circle_marker_69465e74a28b1992ea4f4f1e53602dcf.bindPopup(popup_757762f74943b166280bf5f4eb336abf)
+        ;
+
+        
+    
+    
+            var circle_marker_41f7036fcf8fc4d87236c650c73bd357 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_d87ab7fc442fc2b76d64b2cc97918004 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5cee2210ffa3144199175799d56e4252 = $(`<div id="html_5cee2210ffa3144199175799d56e4252" style="width: 100.0%; height: 100.0%;">         <b>穆民教女歌</b><br>         Author: 京師警察廳總監吴<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: 7.0<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_d87ab7fc442fc2b76d64b2cc97918004.setContent(html_5cee2210ffa3144199175799d56e4252);
+            
+        
+
+        circle_marker_41f7036fcf8fc4d87236c650c73bd357.bindPopup(popup_d87ab7fc442fc2b76d64b2cc97918004)
+        ;
+
+        
+    
+    
+            var circle_marker_ae395a360a7d466c37e48ab93c2b4822 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_c69ae43b7b82c82a20a52948e66f69f8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6a963a01803747b11c2cb50bee61dd29 = $(`<div id="html_6a963a01803747b11c2cb50bee61dd29" style="width: 100.0%; height: 100.0%;">         <b>清真蒙引歌</b><br>         Author: 王岱輿 著<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: 10.0<br>         - Juan: 0<br>         - Prefaces: 1<br>         - Commercial: No         </div>`)[0];
+                popup_c69ae43b7b82c82a20a52948e66f69f8.setContent(html_6a963a01803747b11c2cb50bee61dd29);
+            
+        
+
+        circle_marker_ae395a360a7d466c37e48ab93c2b4822.bindPopup(popup_c69ae43b7b82c82a20a52948e66f69f8)
+        ;
+
+        
+    
+    
+            var circle_marker_16f85e72ab483ed9f0a00f8263e7eb5d = L.circleMarker(
+                [39.3434, 117.3616],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_122ba33fdd9ab3fac5b4504a7114ba4e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_095b62c41adca777124b4518ac2773eb = $(`<div id="html_095b62c41adca777124b4518ac2773eb" style="width: 100.0%; height: 100.0%;">         <b>清眞摘要</b><br>         Author: ？<br>         City: 天津<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_122ba33fdd9ab3fac5b4504a7114ba4e.setContent(html_095b62c41adca777124b4518ac2773eb);
+            
+        
+
+        circle_marker_16f85e72ab483ed9f0a00f8263e7eb5d.bindPopup(popup_122ba33fdd9ab3fac5b4504a7114ba4e)
+        ;
+
+        
+    
+    
+            var circle_marker_092617a049d1dacb0773af76418086dc = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_92f4afe7d571684243e8077f9dbc9d95 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b0ad1e30c5872d497121bd1ca3007a12 = $(`<div id="html_b0ad1e30c5872d497121bd1ca3007a12" style="width: 100.0%; height: 100.0%;">         <b>清眞週刊 第1卷第1號 合訂 天經文譯解 李廷相 譯</b><br>         Author: 清真週刊社<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_92f4afe7d571684243e8077f9dbc9d95.setContent(html_b0ad1e30c5872d497121bd1ca3007a12);
+            
+        
+
+        circle_marker_092617a049d1dacb0773af76418086dc.bindPopup(popup_92f4afe7d571684243e8077f9dbc9d95)
+        ;
+
+        
+    
+    
+            var circle_marker_71c4357942a2f73f65bfc8f8aecd7c22 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_f92fd12ea4cd23f3872eef00f903fb6d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d0b0342a5142c4ab839808f97cb1907d = $(`<div id="html_d0b0342a5142c4ab839808f97cb1907d" style="width: 100.0%; height: 100.0%;">         <b>聖訓四十章</b><br>         Author: 馬玉龍 譯編<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_f92fd12ea4cd23f3872eef00f903fb6d.setContent(html_d0b0342a5142c4ab839808f97cb1907d);
+            
+        
+
+        circle_marker_71c4357942a2f73f65bfc8f8aecd7c22.bindPopup(popup_f92fd12ea4cd23f3872eef00f903fb6d)
+        ;
+
+        
+    
+    
+            var circle_marker_f326bf931db43a3701791a6177244b71 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_d3870c2d7e0d88799c0173c0d2640bc1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_86f05c6f34c681144adbe45635ce210a = $(`<div id="html_86f05c6f34c681144adbe45635ce210a" style="width: 100.0%; height: 100.0%;">         <b>十等復生</b><br>         Author: 馬玉龍 述<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: 9.0<br>         - Juan: 0<br>         - Prefaces: 無<br>         - Commercial: No         </div>`)[0];
+                popup_d3870c2d7e0d88799c0173c0d2640bc1.setContent(html_86f05c6f34c681144adbe45635ce210a);
+            
+        
+
+        circle_marker_f326bf931db43a3701791a6177244b71.bindPopup(popup_d3870c2d7e0d88799c0173c0d2640bc1)
+        ;
+
+        
+    
+    
+            var circle_marker_c1f2198c10bdd3dbcf47a6e6445ff14d = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_e471d64aca722f771ff844238d3831ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9f5ccc5efe733da979ecebaafef59cd9 = $(`<div id="html_9f5ccc5efe733da979ecebaafef59cd9" style="width: 100.0%; height: 100.0%;">         <b>天方教典歌</b><br>         Author: 無<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: 11.0<br>         - Juan: 0<br>         - Prefaces: 無<br>         - Commercial: No         </div>`)[0];
+                popup_e471d64aca722f771ff844238d3831ed.setContent(html_9f5ccc5efe733da979ecebaafef59cd9);
+            
+        
+
+        circle_marker_c1f2198c10bdd3dbcf47a6e6445ff14d.bindPopup(popup_e471d64aca722f771ff844238d3831ed)
+        ;
+
+        
+    
+    
+            var circle_marker_8516f7913327ad45302a5a9a9491feb6 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_9eb5d8409d168309a931331ce3d04b77 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2f3b3512e94f9e623407fc0948bcf8eb = $(`<div id="html_2f3b3512e94f9e623407fc0948bcf8eb" style="width: 100.0%; height: 100.0%;">         <b>天方女子四字經</b><br>         Author: 龍澤周<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_9eb5d8409d168309a931331ce3d04b77.setContent(html_2f3b3512e94f9e623407fc0948bcf8eb);
+            
+        
+
+        circle_marker_8516f7913327ad45302a5a9a9491feb6.bindPopup(popup_9eb5d8409d168309a931331ce3d04b77)
+        ;
+
+        
+    
+    
+            var circle_marker_887e3d1fdf493b5ca345105d59048231 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_c4e0261dd32380a505c0ba46805255e5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0c48ea1b72bb46d2ac5eb02aa0d9858e = $(`<div id="html_0c48ea1b72bb46d2ac5eb02aa0d9858e" style="width: 100.0%; height: 100.0%;">         <b>天方女子四字經</b><br>         Author: 龍澤周 著<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: 3.0<br>         - Juan: 0<br>         - Prefaces: 無<br>         - Commercial: No         </div>`)[0];
+                popup_c4e0261dd32380a505c0ba46805255e5.setContent(html_0c48ea1b72bb46d2ac5eb02aa0d9858e);
+            
+        
+
+        circle_marker_887e3d1fdf493b5ca345105d59048231.bindPopup(popup_c4e0261dd32380a505c0ba46805255e5)
+        ;
+
+        
+    
+    
+            var circle_marker_3f8ec2ce914bbc8aaa56f02265ab880e = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.6, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_cffc24bfecdd0ea6501d824ec538f323 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cbd4420e43b90d7ab15c02dc0a77084a = $(`<div id="html_cbd4420e43b90d7ab15c02dc0a77084a" style="width: 100.0%; height: 100.0%;">         <b>天方奇異勸善錄：新譯</b><br>         Author: 李廷相 譯著 張作良 校批<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: 106.0<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 1<br>         - Commercial: No         </div>`)[0];
+                popup_cffc24bfecdd0ea6501d824ec538f323.setContent(html_cbd4420e43b90d7ab15c02dc0a77084a);
+            
+        
+
+        circle_marker_3f8ec2ce914bbc8aaa56f02265ab880e.bindPopup(popup_cffc24bfecdd0ea6501d824ec538f323)
+        ;
+
+        
+    
+    
+            var circle_marker_37381cc5ac58fcfc4964c7b7453503d7 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_0e253616eb26787b1325fba4ba0fad57 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2fb8bcfca78cfb55fe2d5963f21b7452 = $(`<div id="html_2fb8bcfca78cfb55fe2d5963f21b7452" style="width: 100.0%; height: 100.0%;">         <b>新譯天方大化歷史</b><br>         Author: 李廷相 譯著<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_0e253616eb26787b1325fba4ba0fad57.setContent(html_2fb8bcfca78cfb55fe2d5963f21b7452);
+            
+        
+
+        circle_marker_37381cc5ac58fcfc4964c7b7453503d7.bindPopup(popup_0e253616eb26787b1325fba4ba0fad57)
+        ;
+
+        
+    
+    
+            var circle_marker_5cdd6534b777c979eb72ec878c7c13ad = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_c7422afa4904d2df84df62c147e00a4f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_afa0d117c344606b0a2b94ebe7353732 = $(`<div id="html_afa0d117c344606b0a2b94ebe7353732" style="width: 100.0%; height: 100.0%;">         <b>亞漢文清眞言</b><br>         Author: ？<br>         City: 北平<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_c7422afa4904d2df84df62c147e00a4f.setContent(html_afa0d117c344606b0a2b94ebe7353732);
+            
+        
+
+        circle_marker_5cdd6534b777c979eb72ec878c7c13ad.bindPopup(popup_c7422afa4904d2df84df62c147e00a4f)
+        ;
+
+        
+    
+    
+            var circle_marker_4e5b2baad9a1a790d2369bdb5052d40a = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_676c45b79240fdac10bb8a3c018f9cab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1d0175b7ac1261f605a0ac06701561f3 = $(`<div id="html_1d0175b7ac1261f605a0ac06701561f3" style="width: 100.0%; height: 100.0%;">         <b>亞漢文清眞言</b><br>         Author: ？<br>         City: 北京<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_676c45b79240fdac10bb8a3c018f9cab.setContent(html_1d0175b7ac1261f605a0ac06701561f3);
+            
+        
+
+        circle_marker_4e5b2baad9a1a790d2369bdb5052d40a.bindPopup(popup_676c45b79240fdac10bb8a3c018f9cab)
+        ;
+
+        
+    
+    
+            var circle_marker_995d59fbdd9f241e88087b4e80442891 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_be234e827a1e680de95f1921101e3c6f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b91b8a386e98f461bddaff79a05e6aa7 = $(`<div id="html_b91b8a386e98f461bddaff79a05e6aa7" style="width: 100.0%; height: 100.0%;">         <b>伊斯蘭教的認識</b><br>         Author: 周仲仁？ 周仲二？ 譯著 馬自成 趙振武 審訂<br>         City: 北平<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_be234e827a1e680de95f1921101e3c6f.setContent(html_b91b8a386e98f461bddaff79a05e6aa7);
+            
+        
+
+        circle_marker_995d59fbdd9f241e88087b4e80442891.bindPopup(popup_be234e827a1e680de95f1921101e3c6f)
+        ;
+
+        
+    
+    
+            var circle_marker_c450d607e7fc6604ff782bc6cee34a58 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_73d209ce4fc62c023a7898c191d08ada = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1c5a11ee825bf28c6b8740efe516458f = $(`<div id="html_1c5a11ee825bf28c6b8740efe516458f" style="width: 100.0%; height: 100.0%;">         <b>伊斯蘭入門</b><br>         Author: 唐易塵 選著 王敬一 張馥庭 校正<br>         City: 北平<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_73d209ce4fc62c023a7898c191d08ada.setContent(html_1c5a11ee825bf28c6b8740efe516458f);
+            
+        
+
+        circle_marker_c450d607e7fc6604ff782bc6cee34a58.bindPopup(popup_73d209ce4fc62c023a7898c191d08ada)
+        ;
+
+        
+    
+    
+            var circle_marker_bfeb74e80536557389b4ff2455e4f287 = L.circleMarker(
+                [22.3193, 114.1694],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_994036da82a535b219f491d3b6ffde66);
+        
+    
+        var popup_3be3fe43fe164c34992031649b5ed616 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ae8109defbb4c40abaf520537405b599 = $(`<div id="html_ae8109defbb4c40abaf520537405b599" style="width: 100.0%; height: 100.0%;">         <b>至聖先知言行錄</b><br>         Author: 桂乍加麼屋甸 著 周沛華 湯偉烈 譯 優努士卑亞罕默德麼希甸 編纂<br>         City: 香港<br>         <hr>         Physical Metrics:<br>         - Pages: N/A<br>         - Folia: N/A<br>         - Juan: 0<br>         - Prefaces: 0<br>         - Commercial: No         </div>`)[0];
+                popup_3be3fe43fe164c34992031649b5ed616.setContent(html_ae8109defbb4c40abaf520537405b599);
+            
+        
+
+        circle_marker_bfeb74e80536557389b4ff2455e4f287.bindPopup(popup_3be3fe43fe164c34992031649b5ed616)
+        ;
+
+        
+    
+</script>
+</html>

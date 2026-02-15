@@ -1,0 +1,12 @@
+NETWORK ANALYSIS RESULTS
+============================================================
+
+1. City-to-Library Network
+   Nodes: 22
+   Edges: 37
+   Density: 0.1602
+
+2. Publisher Co-location Network
+   Nodes: 48
+   Edges: 194
+   Density: 0.1720

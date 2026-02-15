@@ -1,0 +1,9 @@
+pandas>=2.0.0,<3.0.0
+folium>=0.14.0,<1.0.0
+networkx>=3.0,<4.0.0
+plotly>=5.0.0,<6.0.0
+openpyxl>=3.0.0,<4.0.0
+python-docx>=0.8.0,<1.0.0
+pytesseract>=0.3.0,<1.0.0
+pdf2image>=1.16.0,<2.0.0
+Pillow>=10.0.0,<13.0.0

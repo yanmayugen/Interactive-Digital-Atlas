@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Digital Atlas - Han-Language Islamic Texts in China</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        nav {
+            background: #2d3748;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #90cdf4;
+        }
+        
+        section {
+            background: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #1a365d;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #4299e1;
+        }
+        
+        h3 {
+            color: #2c5282;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .viz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .viz-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .viz-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .viz-card h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+        
+        .viz-card p {
+            color: rgba(255,255,255,0.9);
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+        
+        .viz-card a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .viz-card a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-box {
+            background: #edf2f7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #4299e1;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1a365d;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #4a5568;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .insight-box {
+            background: #f7fafc;
+            border-left: 4px solid #2c5282;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .insight-box h4 {
+            color: #1a365d;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .insight-box p {
+            color: #4a5568;
+            line-height: 1.8;
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .viz-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><span class="emoji">🗺️</span>Interactive Digital Atlas</h1>
+            <p class="subtitle">Han-Language Islamic Texts: Hui Muslim Publishing, Networks & Japanese Preservation (1863-1943)</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#visualizations">Visualizations</a></li>
+                <li><a href="#insights">Historical Insights</a></li>
+                <li><a href="#team">Research Team</a></li>
+                <li><a href="#statistics">Key Statistics</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section id="overview">
+            <h2><span class="emoji">📚</span>Project Overview</h2>
+            <p>This digital humanities project maps and analyzes 247 Han-language Islamic texts (漢語イスラーム文献) that researchers have documented in Japanese and other collections. These books were published in China during the late 19th and early 20th centuries. The visualizations map the spatial distribution, temporal patterns, and circulation of these documented books across 12 Chinese publishing cities, with particular attention to their preservation in Japanese institutional repositories. This represents an ongoing initiative to locate, catalog, and make accessible more of these rare sources that have been dispersed globally.</p>
+            
+            <p>This project is part of a broader research initiative studying the ethnic and religious identity formation of Chinese Muslims (Hui people, historically called Huimin 回民) and their networks during the transition from imperial to Republican China. The Han-language Islamic texts—written by Hui intellectuals who translated and explained Islamic teachings using Chinese language and concepts—are key sources for understanding how this community maintained religious identity while living among the Han Chinese majority. Many of these texts were collected by Japanese military, diplomatic, and religious personnel active in China during the early 20th century and are now preserved in Japanese research institutions.</p>
+            
+            <p>The project team collected bibliographic data about these books from Japanese institutional and private collections (including research visits to France). The dataset integrates bibliographic records with expert-curated metadata (58 fields) and scholarly annotations, providing insights into Hui Muslim intellectual networks, publishing patterns, and the transnational movement of these texts from China to Japan.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number">247</span>
+                    <span class="stat-label">Total Books</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">185</span>
+                    <span class="stat-label">Geocoded Books</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">80</span>
+                    <span class="stat-label">Year Span</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Chinese Cities</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Japanese Libraries</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Japanese Preservation</span>
+                </div>
+            </div>
+        </section>
+        
+        <section id="visualizations">
+            <h2><span class="emoji">🗺️</span>Interactive Visualizations</h2>
+            <p>Explore our suite of interactive maps, each providing distinct analytical perspectives on the geographical, temporal, and network dimensions of Chinese Islamic publishing history. These visualizations serve as discovery tools, making these rare sources visible and accessible to scholars worldwide.</p>
+            
+            <div class="viz-grid">
+                <div class="viz-card">
+                    <h3>📍 Comprehensive Han-Language Islamic Texts Atlas</h3>
+                    <p>The flagship map integrating all available metadata for documented books, scholarly annotations, and 58 metadata fields. Explore the documented books with detailed popups including titles, authors, publishers, years, physical descriptions, and expert notes from specialists in Chinese Muslim studies.</p>
+                    <a href="comprehensive_atlas.html" target="_blank">Explore Atlas →</a>
+                </div>
+                
+                <div class="viz-card">
+                    <h3>🎨 Regional Publishing Patterns</h3>
+                    <p>Thematic heatmap layers showing geographical patterns: Beijing's modernizing print enterprises versus Yunnan and Sichuan's traditional learning centers, illustrating how different regional centers with Hui Muslim populations produced distinct types of Islamic texts.</p>
+                    <a href="thematic_map.html" target="_blank">View Map →</a>
+                </div>
+                
+                <div class="viz-card">
+                    <h3>🏢 Publisher Distribution</h3>
+                    <p>Analysis of 50 publishers mapped by output volume and operational period, showing major publishing houses and their geographic distribution across Republican-era China.</p>
+                    <a href="publisher_map.html" target="_blank">View Map →</a>
+                </div>
+                
+                <div class="viz-card">
+                    <h3>🌏 China→Japan Migration Network</h3>
+                    <p>Knowledge transfer flows visualizing the "Book Road": 185 books traveling from 12 Chinese cities to 10 Japanese libraries, showing patterns of scholarly collection and preservation during the 20th century.</p>
+                    <a href="network_map.html" target="_blank">View Map →</a>
+                </div>
+                
+                <div class="viz-card">
+                    <h3>🔄 Comprehensive Combined Map</h3>
+                    <p>All-in-one interface with toggle-able layers: book markers, category heatmaps, publisher circles, and migration flows. Switch between different analytical perspectives in a single interactive environment.</p>
+                    <a href="all_in_one_map.html" target="_blank">View Map →</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="insights">
+            <h2><span class="emoji">🔍</span>Understanding the Documented Books</h2>
+            <p>These visualizations reveal patterns in the production, circulation, and preservation of the Chinese Islamic texts that members of this project have documented so far. Understanding these patterns helps scholars locate these sources and recognize their availability for research. This project continues to seek and document additional Han-language Islamic texts held in collections worldwide.</p>
+            
+            <div class="insight-box">
+                <h4>📍 Publishing Concentration in Beijing and Urban Centers</h4>
+                <p>The maps show Beijing's position as a major center of Hui Muslim publishing, accounting for 65% of documented books (120 out of 185 geocoded titles). The 清眞書報社 (Qingzhen Shibao She, Islamic Newspaper and Book Society) published 97 books, representing nearly 40% of the documented corpus. Starting in the late 19th century, Hui Muslim intellectuals in Beijing, Tianjin, Shanghai, Shenyang, and Chengdu began publishing accessible texts for general readers, rather than the complex philosophical works that earlier generations had produced for scholars. This shift in publishing activity created networks through which books circulated beyond their places of publication, reaching Hui Muslim communities throughout China. The maps help scholars identify major publishing centers and understand the geographic distribution of these texts.</p>
+            </div>
+            
+            <div class="insight-box">
+                <h4>🌏 Collection and Preservation by Japanese Institutions</h4>
+                <p>95% of the books with known current locations are now preserved in Japanese institutions, with Tenri University holding 195 books (the largest collection). These texts were collected during the early 20th century when Japanese military personnel, diplomats, religious figures, and nationalists were actively gathering information about Hui Muslims as part of operations in Beijing, Tianjin, and Inner Mongolia. The network map traces these collection patterns, showing how texts produced across China came to be concentrated in Japanese repositories. For researchers, especially those based in China where religious censorship has made accessing these materials difficult, the Japanese collections represent crucial research resources. The visualizations serve as a guide to locating these sources.</p>
+            </div>
+            
+            <div class="insight-box">
+                <h4>🎨 Geographic Patterns in Text Production</h4>
+                <p>The thematic maps show distinct patterns of regional publishing. Beijing and other urban centers saw the development of modern print enterprises producing accessible texts for general readership. Yunnan and Sichuan provinces, regions with established Hui Muslim populations, continued producing traditional Islamic learning materials. The Hui people (descendants of Muslim immigrants from West, Central, and Southeast Asia who arrived in China between the 7th and 14th centuries) developed the tradition of Han-language Islamic texts as a way to maintain religious identity while living surrounded by Han Chinese. These texts translated Arabic and Persian religious works using Confucian, Buddhist, and Taoist terminology. The geographic differentiation visible in the maps reflects how Islamic text production adapted to different local contexts and audiences across China's diverse regions.</p>
+            </div>
+            
+            <div class="insight-box">
+                <h4>⏰ Historical Context and Publishing Timeline</h4>
+                <p>The 80-year span (1863-1943) of publishing activity captured in the dataset encompasses transformations in Chinese history: late Qing reforms, the 1911 revolution, the warlord period, and eventual Japanese invasion. Han-language Islamic texts from the 17th-19th centuries were complex philosophical works that general believers found difficult to read. Starting in the late 19th century, a new type of accessible enlightenment text appeared, including practical guides, primers, and educational materials. These circulated through Hui Muslim religious, cultural, and political networks beyond their places of publication, contributing to heightened ethnic and religious consciousness among the Hui community. The end date of 1943 marks the disruption caused by wartime conditions. Understanding this timeline helps contextualize individual works within broader historical changes in Hui Muslim communities.</p>
+            </div>
+            
+            <div class="insight-box">
+                <h4>📊 Temporal Patterns: Publication Activity Over Time (1863-1943)</h4>
+                <p>The documented books show distinct publication patterns across eight decades, correlated with major historical events:</p>
+                
+                <div style="margin: 1.5rem 0; padding: 1rem; background: #f7fafc; border-radius: 8px;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <strong style="min-width: 120px;">1863-1895</strong>
+                            <div style="flex: 1; background: #e2e8f0; height: 24px; position: relative; border-radius: 4px;">
+                                <div style="background: #4299e1; width: 15%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                            <span style="margin-left: 1rem; min-width: 80px; text-align: right;">~22 books</span>
+                        </div>
+                        <p style="margin-left: 120px; font-size: 0.9rem; color: #4a5568;">Late Qing Era: Limited activity, traditional philosophical texts</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <strong style="min-width: 120px;">1895-1911</strong>
+                            <div style="flex: 1; background: #e2e8f0; height: 24px; position: relative; border-radius: 4px;">
+                                <div style="background: #48bb78; width: 35%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                            <span style="margin-left: 1rem; min-width: 80px; text-align: right;">~50 books</span>
+                        </div>
+                        <p style="margin-left: 120px; font-size: 0.9rem; color: #4a5568;">Late Qing Reforms: Rising publication, accessible texts emerge</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <strong style="min-width: 120px;">1912-1928</strong>
+                            <div style="flex: 1; background: #e2e8f0; height: 24px; position: relative; border-radius: 4px;">
+                                <div style="background: #f6ad55; width: 100%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                            <span style="margin-left: 1rem; min-width: 80px; text-align: right;">~144 books</span>
+                        </div>
+                        <p style="margin-left: 120px; font-size: 0.9rem; color: #4a5568;">Early Republic/Warlord Era: PEAK period - primers, guides, modern print</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <strong style="min-width: 120px;">1928-1937</strong>
+                            <div style="flex: 1; background: #e2e8f0; height: 24px; position: relative; border-radius: 4px;">
+                                <div style="background: #9f7aea; width: 50%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                            <span style="margin-left: 1rem; min-width: 80px; text-align: right;">~72 books</span>
+                        </div>
+                        <p style="margin-left: 120px; font-size: 0.9rem; color: #4a5568;">Nanjing Decade: Continued robust publishing, network expansion</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 0.5rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <strong style="min-width: 120px;">1937-1943</strong>
+                            <div style="flex: 1; background: #e2e8f0; height: 24px; position: relative; border-radius: 4px;">
+                                <div style="background: #fc8181; width: 10%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                            <span style="margin-left: 1rem; min-width: 80px; text-align: right;">~14 books</span>
+                        </div>
+                        <p style="margin-left: 120px; font-size: 0.9rem; color: #4a5568;">Japanese Invasion/WWII: Sharp decline, wartime disruption</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 1rem;"><strong>Key Pattern:</strong> The 1912-1928 period accounts for approximately 58% of dated books, reflecting the shift toward accessible enlightenment texts and modernizing print culture in urban centers, particularly Beijing. This period of heightened publishing activity directly correlates with increased Hui Muslim ethnic and religious consciousness formation.</p>
+            </div>
+            
+            <div class="insight-box">
+                <h4>📚 Types of Works in the Documented Books</h4>
+                <p>The documented books include diverse types of Islamic works. Many books are introductions to Islamic practice and faith, including translations and compilations of Arabic prayers with Chinese translations (like 亞漢文清真言). There are primers on practicing Islam with explanations of wudu, taharat, and the five pillars (such as 伊斯蘭入門). Theological works include Chinese commentaries on the Quran and discussions of concepts like tawhid. Some books feature moral exhortations drawn from the life of the Prophet. The documented books also contain works comparing Islam with other teachings, directed explicitly to Muslim readers. Understanding these content types helps researchers identify which books may be relevant to their specific research questions.</p>
+            </div>
+            
+            <div class="insight-box">
+                <h4>🖨️ Production Methods and Physical Characteristics</h4>
+                <p>The books show various production methods from this period, including moveable type Chinese and Arabic text (sometimes reproduced by offset printing), hand-written calligraphy, and offset printing of pages composed of both type and calligraphy. Some books feature Arabic text with Chinese transliteration and translation. The physical descriptions in the metadata include information about editors, Arabic calligraphers, translators, and publication locations, providing insights into the networks of individuals involved in producing these works.</p>
+            </div>
+            
+            <div class="insight-box">
+                <h4>🗺️ An Ongoing Initiative to Locate and Make Rare Sources Accessible</h4>
+                <p>A primary goal of these visualizations is to make rare Han-language Islamic texts known and accessible to the scholarly community, and to support an ongoing initiative to locate additional examples of these books. Since the late 2010s, the Chinese government has intensified censorship of Islamic-related texts, making research in China difficult and sometimes dangerous. The Japanese collections therefore represent crucial research resources, but many of these texts are not widely cataloged in Western library systems. By mapping the locations, content types, publication patterns, and preservation institutions of documented books, these visualizations serve as both a discovery tool and a foundation for future collecting efforts. Researchers studying Hui Muslim history, Republican-era ethnic and religious policy, Sino-Japanese relations, or minority cultural preservation can use these maps to identify sources for their work. The project aims to continue locating additional texts, create digital catalogs and databases, and further facilitate access to these materials. This ongoing work contributes to revitalizing Chinese Islamic studies and providing historical perspectives on contemporary issues of ethnic and religious minorities in China.</p>
+            </div>
+            
+            <div class="insight-box">
+                <h4>🔬 Digital Mapping Methods</h4>
+                <p>These visualizations show how GIS and network analysis tools can be applied to book history and collection mapping. By spatializing bibliographic data, temporal patterns and institutional connections become visible in ways that differ from traditional catalog listings. The multi-layered approach—combining spatial distribution, temporal spans, thematic categorization, publisher networks, and migration flows—allows scholars to examine how these books were produced and preserved. This approach can be applied to other collections, opening research directions in Asian book history and transnational book circulation.</p>
+            </div>
+            
+            <div class="insight-box">
+                <h4>🌍 Research Questions and Future Directions</h4>
+                <p>These visualizations open research questions for scholars. How did the publication and circulation of accessible Han-language Islamic texts in the late 19th and early 20th centuries affect Hui Muslim ethnic and religious identity? What networks—religious, cultural, and political—enabled these texts to circulate beyond their places of publication? How did Japanese collection activities relate to their military and diplomatic operations in China, and what responses did these activities elicit from Hui Muslims? The visualizations also reveal gaps—certain regions, time periods, or text types that may be underrepresented. Identifying these patterns and gaps can inform future research on Hui Muslim intellectual history, early Chinese Nationalist and Communist ethnic and religious policies, Sino-Japanese relations during this period, and broader questions about how ethnic and religious minority communities maintain identity and cultural practices. Making these sources visible supports scholarship that can contribute to understanding multicultural coexistence in both historical and contemporary contexts.</p>
+            </div>
+        </section>
+        
+        <section id="team">
+            <h2><span class="emoji">👥</span>Research Team</h2>
+            
+            <h3>Principal Investigator</h3>
+            <p><strong>Noriko Unno (海野典子)</strong><br>
+            Assistant Professor, Graduate School of Letters, Osaka University, Japan</p>
+            
+            <h3>Co-Investigators</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 1rem;"><strong>Tatsuya Nakanishi (中西竜也)</strong><br>
+                Associate Professor, Institute for Research in Humanities, Kyoto University, Japan</li>
+                
+                <li style="margin-bottom: 1rem;"><strong>Rian Thum</strong><br>
+                Senior Lecturer, Department of History, University of Manchester, United Kingdom</li>
+                
+                <li style="margin-bottom: 1rem;"><strong>Hannah Theaker</strong><br>
+                Lecturer, School of Society & Culture, Plymouth University, United Kingdom</li>
+                
+                <li style="margin-bottom: 1rem;"><strong>Peng Hai</strong><br>
+                Assistant Professor, Department of History, University of Pittsburgh, United States</li>
+                
+                <li style="margin-bottom: 1rem;"><strong>Aisajiang Youshe</strong><br>
+                PhD Candidate, Committee on Inner Asian and Altaic Studies, Harvard University, United States</li>
+            </ul>
+        </section>
+
+        <section id="statistics">
+            <h2><span class="emoji">📊</span>Statistics on Documented Books</h2>
+            
+            <h3>Data Coverage</h3>
+            <ul>
+                <li><strong>247 total books</strong> from comprehensive bibliographic survey</li>
+                <li><strong>185 geocoded books</strong> (75%) with verified publishing locations</li>
+                <li><strong>144 books with temporal data</strong> (58%) spanning 1863-1943</li>
+                <li><strong>78 expert-curated books</strong> with 58 detailed metadata fields</li>
+                <li><strong>18 books with scholarly commentary</strong> (~12,000 characters)</li>
+            </ul>
+            
+            <h3>Geographic Distribution</h3>
+            <ul>
+                <li><strong>12 Chinese publishing cities</strong> identified in documented books</li>
+                <li><strong>Beijing dominance:</strong> 120 books (65% of geocoded documented books)</li>
+                <li><strong>10 Japanese preservation libraries</strong> currently holding these documented books</li>
+                <li><strong>95% Japanese preservation rate</strong> of documented books with known locations</li>
+                <li><strong>Tenri University:</strong> 195 books (largest holding of documented books)</li>
+            </ul>
+            
+            <h3>Publishing & Networks</h3>
+            <ul>
+                <li><strong>50 distinct publishers</strong> identified and mapped</li>
+                <li><strong>清眞書報社 output:</strong> 97 books (largest single publisher)</li>
+                <li><strong>Network analysis:</strong> 48 publisher nodes, 194 edges</li>
+                <li><strong>Network density:</strong> 0.172 (concentrated publishing ecosystem)</li>
+            </ul>
+            
+            <h3>Thematic Categories</h3>
+            <ul>
+                <li><strong>Theology & Religious Practice:</strong> 109 books (44% of documented books)</li>
+                <li><strong>Practical Guides & Educational Materials:</strong> 62 books (25%) - Includes accessible primers, instructional texts, and general enlightenment materials</li>
+                <li><strong>Language & Linguistics:</strong> 13 books (5%)</li>
+                <li><strong>History:</strong> 1 book (0.4%)</li>
+            </ul>
+            
+            <h3>10 Major Japanese Institutional Holdings</h3>
+            <ul>
+                <li><strong>Tenri University</strong> (天理大學) - 195 books (largest collection)</li>
+                <li><strong>Osaka University</strong> (大阪大學)</li>
+                <li><strong>Ryukoku University</strong> (龍谷大學)</li>
+                <li><strong>Tōyō Bunko</strong> (東洋文庫 / Oriental Library)</li>
+                <li><strong>Kyoto University</strong> (京都大學)</li>
+                <li><strong>National Diet Library</strong> (国立国会図書館)</li>
+                <li><strong>Waseda University</strong> (早稲田大學)</li>
+                <li><strong>Osaka Prefectural Library</strong> (大阪府立図書館)</li>
+                <li><strong>University of Tokyo</strong> (東京大學)</li>
+                <li><strong>Kansai University</strong> (關西大學)</li>
+            </ul>
+            <p style="margin-top: 1rem;">These institutions collectively preserve 95% of the documented books with known current locations, representing materials collected by Japanese military, diplomatic, and religious personnel during operations in China in the early 20th century.</p>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Interactive Digital Atlas Project | Han-Language Islamic Texts (1863-1943)</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Spatiotemporal Analysis | Network Visualization | Digital Humanities Research</p>
+            <p style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem;">
+                <strong>Grant Acknowledgment:</strong><br>
+                This research is supported by the Nakajima Foundation (公益財団法人 平和中島財団), Grant for International Academic Collaborative Research.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

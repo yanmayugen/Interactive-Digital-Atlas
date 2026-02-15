@@ -1,0 +1,531 @@
+#!/usr/bin/env python3
+"""
+Final Dashboard Generator for Islamic Books Digital Atlas
+Creates a unified interface with English support and complete data utilization
+"""
+
+import pandas as pd
+import folium
+from folium import plugins
+import networkx as nx
+from collections import defaultdict
+import re
+import glob
+import os
+
+# Create unified dashboard HTML
+def create_dashboard():
+    """Create main dashboard with navigation to all visualizations"""
+    
+    dashboard_html = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Books in Chinese - Interactive Digital Atlas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px 40px;
+            background: #f8f9fa;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .section {
+            padding: 40px;
+        }
+        
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .map-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .map-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-color: #667eea;
+        }
+        
+        .map-card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .map-card-body {
+            padding: 20px;
+        }
+        
+        .map-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .map-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .map-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+            color: #555;
+        }
+        
+        .map-features li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .key-insights {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .insight-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: white;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #667eea;
+            color: white;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Interactive Digital Atlas</h1>
+            <div class="subtitle">Islamic Books Published in Chinese (19th-20th Century)</div>
+            <div class="subtitle">中國伊斯蘭教書籍互動數位地圖集</div>
+        </header>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">247</div>
+                <div class="stat-label">Total Books</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Publishing Cities</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">185</div>
+                <div class="stat-label">Geocoded Books</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Japanese Libraries</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1863-1943</div>
+                <div class="stat-label">Time Period</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Preserved in Japan</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 Interactive Visualizations</h2>
+            <p style="color: #666; margin-bottom: 30px; line-height: 1.6;">
+                Explore 9 comprehensive interactive maps analyzing the spatiotemporal evolution, geographic distribution, 
+                network relationships, and scholarly significance of Islamic books published in Chinese.
+            </p>
+            
+            <div class="map-grid">
+                <!-- Map 1: Enhanced Basic Map -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        🗺️ Enhanced Basic Map
+                    </div>
+                    <div class="map-card-body">
+                        <p class="map-description">
+                            Comprehensive overview with all 185 geocoded books, marker clusters, and publishing density heatmap.
+                        </p>
+                        <ul class="map-features">
+                            <li>Interactive marker clusters</li>
+                            <li>Density heatmap layer</li>
+                            <li>Detailed book metadata</li>
+                            <li>Layer toggle control</li>
+                        </ul>
+                        <a href="index.html" class="btn">Open Map</a>
+                    </div>
+                </div>
+                
+                <!-- Map 2: Temporal Evolution -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        ⏱️ Temporal Evolution Map
+                        <span class="badge">80 Years</span>
+                    </div>
+                    <div class="map-card-body">
+                        <p class="map-description">
+                            Time-lapse visualization showing publishing centers shift from 1863 to 1943 with interactive slider.
+                        </p>
+                        <ul class="map-features">
+                            <li>Time slider (1863-1943)</li>
+                            <li>144 books with temporal data</li>
+                            <li>Era-based transitions</li>
+                            <li>Historical trend analysis</li>
+                        </ul>
+                        <a href="temporal_map.html" class="btn">Open Map</a>
+                    </div>
+                </div>
+                
+                <!-- Map 3: Thematic Specialization -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        📚 Regional Specialization Map
+                    </div>
+                    <div class="map-card-body">
+                        <p class="map-description">
+                            Thematic heatmaps showing which regions specialized in theology, language, history, or general works.
+                        </p>
+                        <ul class="map-features">
+                            <li>4 category-specific layers</li>
+                            <li>Theology (109 books)</li>
+                            <li>Language (13 books)</li>
+                            <li>History & General works</li>
+                        </ul>
+                        <a href="thematic_map.html" class="btn">Open Map</a>
+                    </div>
+                </div>
+                
+                <!-- Map 4: Publisher Distribution -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        🏢 Publisher Distribution Map
+                    </div>
+                    <div class="map-card-body">
+                        <p class="map-description">
+                            50 publishers mapped and analyzed with circle size showing book count and color indicating longevity.
+                        </p>
+                        <ul class="map-features">
+                            <li>50 publishers analyzed</li>
+                            <li>Size = output volume</li>
+                            <li>Color = active years</li>
+                            <li>清眞書報社: 97 books</li>
+                        </ul>
+                        <a href="publisher_map.html" class="btn">Open Map</a>
+                    </div>
+                </div>
+                
+                <!-- Map 5: China-Japan Network -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        🌐 China→Japan Migration Network
+                        <span class="badge">95% Preserved</span>
+                    </div>
+                    <div class="map-card-body">
+                        <p class="map-description">
+                            "The Book Road": Visualizes how 185 books migrated from Chinese cities to Japanese libraries.
+                        </p>
+                        <ul class="map-features">
+                            <li>12 Chinese cities → 10 Japanese libraries</li>
+                            <li>Flow lines show migration paths</li>
+                            <li>天理大學: 195 books</li>
+                            <li>Knowledge preservation history</li>
+                        </ul>
+                        <a href="network_map.html" class="btn">Open Map</a>
+                    </div>
+                </div>
+                
+                <!-- Map 6: Ultra-Enhanced Map -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        ✨ Ultra-Enhanced Map
+                        <span class="badge">58 Fields</span>
+                    </div>
+                    <div class="map-card-body">
+                        <p class="map-description">
+                            Expert-curated data with 58 metadata fields plus scholarly commentary from Word documents.
+                        </p>
+                        <ul class="map-features">
+                            <li>78 expert-curated books</li>
+                            <li>Preface/postface networks</li>
+                            <li>Physical book metrics</li>
+                            <li>Scholarly commentary embedded</li>
+                        </ul>
+                        <a href="index_ultra.html" class="btn">Open Map</a>
+                    </div>
+                </div>
+                
+                <!-- Map 7: Preface Networks -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        🤝 Preface Author Networks
+                    </div>
+                    <div class="map-card-body">
+                        <p class="map-description">
+                            Intellectual endorsement networks showing which scholars wrote prefaces for which books.
+                        </p>
+                        <ul class="map-features">
+                            <li>5 preface authors identified</li>
+                            <li>4 endorsement relationships</li>
+                            <li>Geographic distribution</li>
+                            <li>Prestige network analysis</li>
+                        </ul>
+                        <a href="preface_network_map.html" class="btn">Open Map</a>
+                    </div>
+                </div>
+                
+                <!-- Map 8: Physical Book Analysis -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        📖 Physical Book Analysis Map
+                    </div>
+                    <div class="map-card-body">
+                        <p class="map-description">
+                            Book size and complexity analysis showing pages, folia, chapters, and commercial indicators.
+                        </p>
+                        <ul class="map-features">
+                            <li>Physical metrics (pages, folia, juan)</li>
+                            <li>Commercial vs scholarly</li>
+                            <li>Advertisement tracking</li>
+                            <li>Publishing economics</li>
+                        </ul>
+                        <a href="physical_books_map.html" class="btn">Open Map</a>
+                    </div>
+                </div>
+                
+                <!-- Map 9: Collection Influence -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        📚 Collection Influence Map
+                    </div>
+                    <div class="map-card-body">
+                        <p class="map-description">
+                            Impact and distribution of major anthologies: 清眞大典 and 回族典藏全書.
+                        </p>
+                        <ul class="map-features">
+                            <li>清眞大典: 139 books</li>
+                            <li>回族典藏全書: 182 books</li>
+                            <li>Anthology influence analysis</li>
+                            <li>Regional distribution patterns</li>
+                        </ul>
+                        <a href="collection_influence_map.html" class="btn">Open Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🔍 Key Historical Insights</h2>
+            <div class="key-insights">
+                <div class="insight-item">
+                    <strong>🇯🇵 Japanese Preservation:</strong> 95% of all books (234 out of 246) ended up in Japanese academic institutions, 
+                    with 天理大學 (Tenri University) holding the largest collection (195 books).
+                </div>
+                <div class="insight-item">
+                    <strong>📍 Beijing Dominance:</strong> Beijing published 120 books (65% of total), led by 清眞書報社 (Qingzhen Shubao She), 
+                    showing the capital's central role in Islamic scholarly publishing.
+                </div>
+                <div class="insight-item">
+                    <strong>⏰ Temporal Shift:</strong> Clear transition from traditional centers (Yunnan, Sichuan) to modern urban hubs 
+                    (Beijing, Shanghai) during the Republic era, reflecting broader modernization trends.
+                </div>
+                <div class="insight-item">
+                    <strong>🎓 Regional Specialization:</strong> Beijing specialized in periodicals and newspapers, while Yunnan and Sichuan 
+                    were centers for deep theological manuscripts.
+                </div>
+                <div class="insight-item">
+                    <strong>🔗 Publisher Concentration:</strong> Network analysis reveals high co-location density (0.172), indicating 
+                    a concentrated publishing ecosystem with strong geographic clustering.
+                </div>
+                <div class="insight-item">
+                    <strong>📚 Collection Reach:</strong> The major anthologies 清眞大典 and 回族典藏全書 had significant influence, 
+                    incorporating 139 and 182 books respectively across multiple regions.
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 Network Analysis Results</h2>
+            <div class="map-grid">
+                <div class="stat-card">
+                    <div class="stat-number">48</div>
+                    <div class="stat-label">Publisher Nodes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">194</div>
+                    <div class="stat-label">Co-location Edges</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0.172</div>
+                    <div class="stat-label">Network Density</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">22</div>
+                    <div class="stat-label">Geographic Nodes</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📚 Data Sources</h2>
+            <p style="color: #666; line-height: 1.8;">
+                <strong>Main CSV:</strong> 247 books with 23 columns including title, author, publisher, year, city, and library location.<br>
+                <strong>Expert Excel Files:</strong> 78 expert-curated books with 58 metadata fields including preface networks, 
+                physical metrics, and collection membership.<br>
+                <strong>Word Documents:</strong> ~12,000 characters of scholarly commentary covering themes, religious significance, 
+                and historical context for 18 books.<br>
+                <strong>Tenri University PDF Catalog:</strong> Reference document (5 pages) documenting the catalog system.
+            </p>
+        </div>
+        
+        <footer>
+            <p>Interactive Digital Atlas of Islamic Books in Chinese</p>
+            <p style="margin-top: 10px; opacity: 0.7;">
+                Data Sources: Tenri University, Osaka University, Tōyō Bunko, and other Japanese academic institutions
+            </p>
+            <p style="margin-top: 10px; opacity: 0.7;">
+                Visualization powered by Folium, NetworkX, and modern web technologies
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
+"""
+    
+    with open('dashboard.html', 'w', encoding='utf-8') as f:
+        f.write(dashboard_html)
+    
+    print("✅ Created dashboard.html - Unified interface with all visualizations")
+
+if __name__ == "__main__":
+    print("="*60)
+    print("Creating Final Unified Dashboard")
+    print("="*60)
+    create_dashboard()
+    print("\n✨ Dashboard creation complete!")
+    print("Open dashboard.html in your web browser to access all visualizations")
